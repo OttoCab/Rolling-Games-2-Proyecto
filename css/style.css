@@ -1,0 +1,18 @@
+.lista{
+    list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.navbar, footer {
+    background-color: rgb(19, 18, 18);
+}
+
+.carousel-control-prev {
+    left: -110px;
+}
+
+.carousel-control-next {
+    right: -110px;
+}

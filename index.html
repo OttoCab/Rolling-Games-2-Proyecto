@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Rolling Games</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -43,28 +43,105 @@
         </nav>
     </header>
     <main class="bg-dark">
-        <section class="container">          
-                <p class="text-light">Pagina Principal</p>                           
+        <!-- <section class="container">
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <form class="d-flex ms-auto">
+                        <input class="form-control me-2" type="search" placeholder="Buscar Juego" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+            <h5 class="bg-dark text-light my-3">Destacado</h5>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active d-flex">
+                        <img src="img/Games/crysisremastered2.jpg" class="d-block w-100" alt="...">
+                        <div class="card" style="width: 40rem;">
+                            <div class="card-body bg-dark text-light">
+                                <h5 class="card-title">Crysis Remastered</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Shooter / RPG</h6>
+                                <p class="card-text">El shooter clásico en primera persona de Crytek ha vuelto con un
+                                    gameplay lleno de acción, un mundo abierto y las emocionantes batallas épicas que te
+                                    atraparon la primera vez; ahora con gráficos remasterizados optimizados para una
+                                    nueva generación de hardware.</p>
+                                <a href="#" class="btn btn-light">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section> -->
+        <section class="container">
+            <h5 class="bg-dark text-light mt-3">Novedades</h5>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item d-flex" data-bs-interval="10000">
+                    <img src="img/Games/crysisremastered2.jpg" class="d-block " alt="...">
+                    <img src="img/Games/crysisremastered2.jpg" class="d-block " alt="...">
+                    <img src="img/Games/crysisremastered2.jpg" class="d-block " alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/Games/horizonzerodawn.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </section>
+        
     </main>
-    <footer class="bg-dark text-light py-4">
+    <footer class="text-light py-4">
         <section class="container">
             <article class="row">
-                
+
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <h5>Mapa del Sitio:</h5>
-                    <ul>
-                        <li><a href="index.html">Tienda</a></li>
-                        <li><a href="administracion.html">Administracion</a></li>
-                        <li><a href="adn.html">Acerca de Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                    <ul class="lista">
+                        <li><a href="index.html" class="text-secondary">Tienda</a></li>
+                        <li><a href="administracion.html" class="text-secondary">Administracion</a></li>
+                        <li><a href="adn.html" class="text-secondary">Acerca de Nosotros</a></li>
+                        <li><a href="contacto.html" class="text-secondary">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 text-center">
                     <h5>Encontranos en:</h5>
-                    <a href="Error404.html"><i class="fab fa-facebook-square fa-3x text-primary m-2"></i></a>
-                    <a href="Error404.html"><i class="fab fa-instagram fa-3x text-danger m-2"></i></a>
-                    <a href="Error404.html"><i class="fab fa-twitter fa-3x text-primary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-facebook-square fa-3x text-secondary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-instagram fa-3x text-secondary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-twitter fa-2x text-secondary m-2"></i></a>
                 </div>
             </article>
             <p class="text-center">&copy;Todos los derechos reservados</p>
