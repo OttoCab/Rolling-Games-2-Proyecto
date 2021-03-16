@@ -42,11 +42,145 @@
             </div>
         </nav>
     </header>
-    <main class="bg-dark">
-        <section class="container">          
-                <p class="text-light">Pagina para la Administracion de juegos</p>                           
+    <main class="container">
+        <section class="mt-3">
+            <h1>Administrar Juegos</h1>
+        </section>
+        <hr>
+        <section>
+            <div class="row my-3">
+              <div class="col-10 text-center">
+                <h3>Lista de Juegos</h3>
+              </div>
+              <div class="col-2">
+                <button
+                  class="btn btn-primary"
+                  id="btnAgregar"
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Publicado</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaJuegos">
+                </tbody>
+              </table>
+            </div>
         </section>
     </main>
+
+
+        <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modalProducto"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formFunkopop" onsubmit="guardarDatos(event)">
+              <div class="mb-3">
+                <label class="form-label">Codigo</label>
+                <input
+                  type="number"
+                  id="codigo"
+                  class="form-control"
+                  placeholder="1"
+                  onblur="validarCodigo(this)"
+                />
+                <div class="invalid-feedback">Codigo no valido</div>
+                <div class="valid-feedback">Codigo Valido</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  class="form-control"
+                  placeholder="Batman"
+                  onblur="validarCampos(this)"
+                />
+                <div class="invalid-feedback">Nombre invalido</div>
+                <div class="valid-feedback">Nombre Valido</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Numero de Serie</label>
+                <input
+                  type="text"
+                  id="numSerie"
+                  class="form-control"
+                  placeholder="123gsdg"
+                  onblur="validarCampos(this)"
+                />
+                <div class="invalid-feedback">Numero de Serie invalido</div>
+                <div class="valid-feedback">Numero de Serie Valido</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Categoria</label>
+                <input
+                  type="text"
+                  id="categoria"
+                  class="form-control"
+                  placeholder="DC"
+                  onblur="validarCampos(this)"
+                />
+                <div class="invalid-feedback">Categoria invalida</div>
+                <div class="valid-feedback">Categoria Valida</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <textarea
+                  id="descripcion"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Caballero de la Noche"
+                  onblur="validarDescripcion(this)"
+                ></textarea>
+                <div class="invalid-feedback">
+                  Debe escribir al menos 5 caracteres
+                </div>
+                <div class="valid-feedback">Descripcion Valida</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input
+                  type="text"
+                  id="imagen"
+                  class="form-control"
+                  placeholder="Agregar una Imagen"
+                />
+              </div>
+              <button class="btn btn-primary" type="submit">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <footer class="bg-dark text-light py-4">
         <section class="container">
             <article class="row">
