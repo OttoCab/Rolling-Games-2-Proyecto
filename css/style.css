@@ -1,0 +1,33 @@
+.lista {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.navbar,
+footer {
+  background-color: rgb(19, 18, 18);
+}
+
+
+/* control horizontal scroll */
+.horizontal-scroll {
+  display: inline-flex;
+  padding: 1px;
+}
+
+#withScrollX {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.smallCard {
+    border: 0;
+    width: 170px;
+    min-width: 170px;
+    min-height: 210px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+  }
+/* investigar como usar overflow-x */
