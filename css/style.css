@@ -1,25 +1,28 @@
 .lista {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .navbar,
 footer {
-  background-color: rgb(19, 18, 18);
+    background-color: rgb(19, 18, 18);
 }
 
 
 /* control horizontal scroll */
+
 .horizontal-scroll {
-  display: inline-flex;
-  padding: 1px;
+    display: inline-flex;
+    padding: 1px;
 }
 
 #withScrollX {
-  overflow-x: hidden;
-  width: 100%;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .smallCard {
@@ -29,5 +32,11 @@ footer {
     min-height: 210px;
     margin-left: 15px;
     margin-bottom: 20px;
-  }
+}
+
+
 /* investigar como usar overflow-x */
+
+.bgId-error {
+    background-color: #111111;
+}
