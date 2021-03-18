@@ -100,10 +100,21 @@
               <td>Assassins Credd</td>
               <td>Juegos</td>
               <td>Assassins</td>
-              <td>Si</td>
               <td>
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
+                <div class="form-check">
+                  <input type="checkbox" id="publicado" class="form-check-input">
+                </div>
+              </td>
+              <td>
+                <button class="iconos">
+                  <i class="editar far fa-edit"></i>      
+                </button>
+                <button class="iconos">
+                  <i class="eliminar fas fa-trash-alt"></i>
+                </button>
+                <button class="iconos">
+                  <i class="publicado far fa-star"></i>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -135,10 +146,10 @@
               <div class="mb3">
                 <label class="form-label">Codigo</label>
                 <input
-                  type="text"
+                  type="number"
                   id="codigo"
                   class="form-control"
-                  placeholder="1"
+                  placeholder="hacer autoincremental"
                 />
               </div>
               <div class="mb3">
@@ -148,16 +159,25 @@
                   id="nombre"
                   class="form-control"
                   placeholder="Assasins Creed"
+                  onblur="campoRequerido(this)" required
                 />
+                <div class="invalid-feedback">
+                  Debe ingresar un nombre valido
+                </div>
               </div>
+
               <div class="mb3">
                 <label class="form-label">Categoria</label>
                 <input
                   type="text"
                   id="categoria"
                   class="form-control"
-                  placeholder="Juegos de accion"
+                  placeholder="Ingrese una categoria"
+                  onblur="campoRequerido(this)" required
                 />
+                <div class="invalid-feedback">
+                  Debe ingresar una categoria valida
+                </div>
               </div>
               <div class="mb3">
                 <label class="form-label">Descripcion</label>
@@ -165,19 +185,22 @@
                   id="descripcion"
                   rows="3"
                   class="form-control"
-                  placeholder="El mejor juego de accion"
+                  placeholder="Ingrese una descripcion"
+                  onblur="validarDescripcion(this)" required
                 ></textarea>
+                <div class="invalid-feedback">
+                  Debe ingresar mas de 5 caracteres
+                </div>
               </div>
               <div class="mb3">
-                <label class="form-label">Publicado</label>
-                <input
-                  type="text"
-                  id="publicado"
-                  class="form-control"
-                  placeholder="si/no"
-                />
+                <div class="form-check">
+                  <input type="checkbox" id="publicado" class="form-check-input">
+                  <label class="form-check-label">Publicado</label>
+                </div>
               </div>
-                <button class="btn btn-primary mt-3" type="submit">Guardar</button>
+              <button class="btn btn-primary mt-3" type="submit">
+                Guardar
+              </button>
             </form>
           </div>
         </div>

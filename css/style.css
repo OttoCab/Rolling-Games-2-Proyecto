@@ -31,3 +31,19 @@ footer {
     margin-bottom: 20px;
   }
 /* investigar como usar overflow-x */
+
+/* formulario */
+.iconos{
+  border: none;
+  background-color: transparent;
+  width: 50px;
+}
+.editar{
+  color:yellow;
+}
+.eliminar{
+  color: red;
+}
+.publicado{
+  color:white;
+}
