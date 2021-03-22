@@ -1,4 +1,4 @@
-function campoRequerido(input) {
+function CampoRequerido(input) {
     if (input.value.trim() === '') {
         input.className = 'form-control is-invalid';
         return false;
@@ -8,7 +8,7 @@ function campoRequerido(input) {
     }
 }
 
-function validarDescripcion(descripcion) {
+function ValidarDescripcion(descripcion) {
     if (descripcion.value.trim() !='' && descripcion.value.length >= 5){
         descripcion.className = 'form-control is-valid';
         return true;
@@ -18,7 +18,7 @@ function validarDescripcion(descripcion) {
     }
 }
 
-function validacion(event){
+function Validacion(event){
     event.preventDefault();
     console.log(event);
     if(campoRequerido(document.getElementById('nombre')) && validarDescripcion(document.getElementById('descripcion'))){
@@ -29,9 +29,11 @@ function validacion(event){
     }
 }
 
-function limpiarForm(){
+function LimpiarForm(){
     document.getElementById('formJuegos').reset();
     nombre.className = 'form-control';
     categoria.className = 'form-control';
     descripcion.className = 'form-control';
+    codigo.className = 'form-control';
 }
+
