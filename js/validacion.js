@@ -1,4 +1,4 @@
-function campoRequerido(input) {
+function CampoRequerido(input) {
     if (input.value.trim() === '') {
         input.className = 'form-control is-invalid';
         return false;
@@ -8,7 +8,7 @@ function campoRequerido(input) {
     }
 }
 
-function validarDescripcion(descripcion) {
+function ValidarDescripcion(descripcion) {
     if (descripcion.value.trim() !='' && descripcion.value.length >= 5){
         descripcion.className = 'form-control is-valid';
         return true;
@@ -18,20 +18,26 @@ function validarDescripcion(descripcion) {
     }
 }
 
-function validacion(event){
-    event.preventDefault();
-    console.log(event);
-    if(campoRequerido(document.getElementById('nombre')) && validarDescripcion(document.getElementById('descripcion'))){
-        alert('ok');
-        limpiarForm();
-    }else{
-        alert('mal');
-    }
-}
+let checkPublicado = document.getElementById('publicado');
 
-function limpiarForm(){
-    document.getElementById('formJuegos').reset();
-    nombre.className = 'form-control';
-    categoria.className = 'form-control';
-    descripcion.className = 'form-control';
-}
+
+
+// checkPublicado.addEventListener('checked', validarPublicado);
+// function validarPublicado(){
+//     console.log(checkPublicado.checked);
+//     if(checkPublicado.checked){
+//         checkPublicado.className = 'form-check-input - is-valid';
+//     }else{
+//         heckPublicado.className = 'form-check-input - is-invalid';
+//     }
+// }
+
+
+// function limpiarForm(){
+//     let formulario = document.getElementById('formJuegos');
+//     formulario.reset();
+//     codigo.className = 'form-control';
+//     nombre.className = 'form-control';
+//     categoria.className = 'form-control';
+//     descripcion.className = 'form-control';
+//  }
