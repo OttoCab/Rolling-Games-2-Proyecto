@@ -43,7 +43,6 @@ window.agregarJuego = function (event) {
     'success'
   );
   datosLocalStorage();
- 
   //cerrar la ventana modal
   modalJuego.hide();
 };
@@ -59,7 +58,7 @@ function limpiarForm() {
 
 //funcion leer los datos de local y que no se borren
 function datosLocalStorage() {
-  if (localStorage.length > 0) {
+  if (localStorage.length >= 0) {
     // se trae con variable provisoria los datos de localStorrage
     //parse transforma Json a java script 
     let _arregloJuegos = JSON.parse(localStorage.getItem('ListaDeJuegos'));
@@ -68,7 +67,7 @@ function datosLocalStorage() {
     if (arregloJuegos.length === 0) {
       arregloJuegos = _arregloJuegos;
     }
-    cargarTabla (_arregloJuegos);
+    cargarTabla(_arregloJuegos);
   }
 }
 
@@ -105,7 +104,7 @@ function cargarTabla(_arregloJuegos) {
         <i class="eliminar fas fa-trash-alt"></i>
       </button>
     </td>
-  </tr>`;
+  </tr>`
     tablaJuegos.innerHTML += filaJuego;
   }
 }
