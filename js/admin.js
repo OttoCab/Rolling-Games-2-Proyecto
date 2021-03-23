@@ -3,9 +3,12 @@ import { Juegos } from "./ClasesAdmin.js";
 let arregloJuegos = [];
 const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
 let btnAgregar = document.getElementById('btnAgregar');
+//funcion para mostrar modal
 btnAgregar.addEventListener('click', function () {
   modalJuego.show();
 })
+
+datosLocalStorage();
 // let boton = document.getElementById('btnAgregar');
 // boton.addEventListener('click',CampoRequerido);
 
@@ -50,4 +53,16 @@ function limpiarForm() {
   nombre.className = 'form-control';
   categoria.className = 'form-control';
   descripcion.className = 'form-control';
+}
+
+//funcion leer los datos de local y que no se borren
+function datosLocalStorage(){
+  if(localStorage.length > 0){
+    // se trae con variable provisoria los datos de localStorrage
+    //parse transforma Json a java script 
+    let _arregloJuegos = JSON.parse(localStorage.getItem('ListaDeJuegos'));
+    console.log(_arregloJuegos);  
+  }
+
+  
 }
