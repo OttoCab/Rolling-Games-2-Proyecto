@@ -7,8 +7,7 @@
     <meta name="author" content="Cabanillas Oscar">
     <meta name="keywords" content="Rolling Games, Games, Juegos, Store, Tienda, Compras">
     <meta name="description" content="Tienda de juegos digitales">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/ffca2b7368.js" crossorigin="anonymous"></script>
     <title>Rolling Games | Detalles</title>
@@ -16,11 +15,10 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Rolling Games</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -43,28 +41,78 @@
         </nav>
     </header>
     <main class="bg-dark">
-        <section class="container">          
-                <p class="text-light">Pagina de Detalles de un Juego</p>                           
+        <section class="text-center">
+            <h2 class="jumbotron bg-dark display-3 pt-5 text-light">titulo de prueba</h2>
+            <hr>
+        </section>
+        <section>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="/img/error404/404dream.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="/img/error404/404grey.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/error404/mario404.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section class="container">
+            <article class="row text-light">
+                <div class="col-lg-4">
+                    <h4>Acerca del juego</h4>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12 my-3">Desarrolladora, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Editora, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Fecha de lanzamiento, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Etiquetas, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Clasificación, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Plataforma, Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta similique neque ipsum ratione illum delectus expedita beatae quos molestiae.</div>
+                    </div>
+                    <div>
+                        <h4>Sinopsis: </h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quisquam neque dicta inventore consectetur?</p>
+                    </div>
+                </div>
+            </article>
+            <article class="mt-4">
+                <h4 class="mb-4"><b></b></h4>
+                <div>
+                    <p></p>
+                </div>
+            </article>
         </section>
     </main>
-    <footer class="bg-dark text-light py-4">
+    <footer class="text-light py-4">
         <section class="container">
             <article class="row">
-                
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <h5>Mapa del Sitio:</h5>
-                    <ul>
-                        <li><a href="index.html">Tienda</a></li>
-                        <li><a href="administracion.html">Administracion</a></li>
-                        <li><a href="adn.html">Acerca de Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                    <ul class="lista">
+                        <li><a href="index.html" class="text-secondary">Tienda</a></li>
+                        <li><a href="administracion.html" class="text-secondary">Administracion</a></li>
+                        <li><a href="adn.html" class="text-secondary">Acerca de Nosotros</a></li>
+                        <li><a href="contacto.html" class="text-secondary">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 text-center">
                     <h5>Encontranos en:</h5>
-                    <a href="Error404.html"><i class="fab fa-facebook-square fa-3x text-primary m-2"></i></a>
-                    <a href="Error404.html"><i class="fab fa-instagram fa-3x text-danger m-2"></i></a>
-                    <a href="Error404.html"><i class="fab fa-twitter fa-3x text-primary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-facebook-square fa-3x text-secondary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-instagram fa-3x text-secondary m-2"></i></a>
+                    <a href="Error404.html"><i class="fab fa-twitter fa-2x text-secondary m-2"></i></a>
                 </div>
             </article>
             <p class="text-center">&copy;Todos los derechos reservados</p>
@@ -72,9 +120,7 @@
     </footer>
     <script src="js/admin.js"></script>
     <script src="js/validacion.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 </body>
 
