@@ -100,11 +100,43 @@ function cargarTabla(_arregloJuegos) {
       <button class="iconos">
         <i class="editar far fa-edit"></i>
       </button>
-      <button class="iconos">
+      <button class="iconos" onclick="eliminarJuego(this)" id="${_arregloJuegos[i].codigo}">
         <i class="eliminar fas fa-trash-alt"></i>
       </button>
     </td>
   </tr>`
     tablaJuegos.innerHTML += filaJuego;
   }
+}
+
+window.eliminarJuego = function(boton){
+  console.log(boton.id);
+  Swal.fire({
+    title: 'Esta seguro de eliminar el Juego',
+    text: "No puedes volver atras luego de este paso",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si!',
+    cancelButtonText: 'Cancelar!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let FiltrarJuego = arregloJuegos.filter(function(producto){
+        return producto.codigo != boton.id;
+      });
+      console.log(FiltrarJuego);
+      //se deben igualar los arreglos
+      arregloJuegos = FiltrarJuego;
+      //se guarda en local storage
+      localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
+      //se llama a la funcion datosLocalStorage
+      datosLocalStorage();
+      Swal.fire(
+        'Producto eliminado!',
+        'El Funkopop seleccionado fue eliminado.',
+        'success'
+      )
+    }
+  })
 }
