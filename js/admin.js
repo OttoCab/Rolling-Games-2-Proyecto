@@ -12,6 +12,7 @@ window.agregarJuego = function (event) {
   let nombre = document.getElementById("nombre").value;
   let categoria = document.getElementById("categoria").value;
   let descripcion = document.getElementById("descripcion").value;
+  let imagen = document.getElementById("imagen").value;
   let publicado = document.getElementById("publicado").value;
 
   let nuevoJuego = new Juegos(
@@ -19,8 +20,13 @@ window.agregarJuego = function (event) {
     nombre,
     categoria,
     descripcion,
+    imagen,
     publicado
   );
+  //se agrega en el arreglo
   arregloJuegos.push(nuevoJuego);
   console.log(arregloJuegos);
+
+  // se guarda en localstorage
+    localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
 };

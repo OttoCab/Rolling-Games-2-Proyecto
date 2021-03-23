@@ -83,42 +83,50 @@
             </button>
           </div>
         </div>
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Codigo</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Categoria</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Publicado</th>
-              <th scope="col">Opciones</th>
-            </tr>
-          </thead>
-          <tbody id="tablaJuegos">
-            <tr>
-              <th scope="row">1</th>
-              <td>Assassins Credd</td>
-              <td>Juegos</td>
-              <td>Assassins</td>
-              <td>
-                <div class="form-check">
-                  <input type="checkbox" id="publicado" class="form-check-input">
-                </div>
-              </td>
-              <td>
-                <button class="iconos">
-                  <i class="editar far fa-edit"></i>      
-                </button>
-                <button class="iconos">
-                  <i class="eliminar fas fa-trash-alt"></i>
-                </button>
-                <button class="iconos">
-                  <i class="publicado far fa-star"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Publicado</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaJuegos">
+              <tr>
+                <th scope="row">1</th>
+                <td>Assassins Credd</td>
+                <td>Juegos</td>
+                <td>accion</td>
+                <td>Sin imagen</td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="publicado"
+                      class="form-check-input"
+                    />
+                  </div>
+                </td>
+                <td>
+                  <button class="iconos">
+                    <i class="publicado far fa-star"></i>
+                  </button>
+                  <button class="iconos">
+                    <i class="editar far fa-edit"></i>
+                  </button>
+                  <button class="iconos">
+                    <i class="eliminar fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
@@ -142,7 +150,10 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="formJuegos" onsubmit="agregarJuego(event)">
+            <form
+              onsubmit="agregarJuego(event)"
+              id="formJuegos" 
+            >
               <div class="mb3">
                 <label class="form-label">Codigo</label>
                 <input
@@ -150,7 +161,8 @@
                   id="codigo"
                   class="form-control"
                   placeholder="hacer autoincremental"
-                  onblur="CampoRequerido(this)" required
+                  onblur="CampoRequerido(this)"
+                  required
                 />
               </div>
               <div class="mb3">
@@ -160,7 +172,8 @@
                   id="nombre"
                   class="form-control"
                   placeholder="Assasins Creed"
-                  onblur="CampoRequerido(this)" required
+                  onblur="CampoRequerido(this)"
+                  required
                 />
                 <div class="invalid-feedback">
                   Debe ingresar un nombre valido
@@ -174,7 +187,8 @@
                   id="categoria"
                   class="form-control"
                   placeholder="Ingrese una categoria"
-                  onblur="CampoRequerido(this)" required
+                  onblur="CampoRequerido(this)"
+                  required
                 />
                 <div class="invalid-feedback">
                   Debe ingresar una categoria valida
@@ -187,15 +201,29 @@
                   rows="3"
                   class="form-control"
                   placeholder="Ingrese una descripcion"
-                  onblur="ValidarDescripcion(this)" required
+                  onblur="ValidarDescripcion(this)"
+                  required
                 ></textarea>
                 <div class="invalid-feedback">
                   Debe ingresar mas de 5 caracteres
                 </div>
               </div>
+              <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input
+                  type="text"
+                  id="imagen"
+                  class="form-control"
+                  placeholder="Agregar una Imagen"
+                />
+              </div>
               <div class="mb3">
                 <div class="form-check">
-                  <input type="checkbox" id="publicado" class="form-check-input">
+                  <input
+                    type="checkbox"
+                    id="publicado"
+                    class="form-check-input"
+                  />
                   <label class="form-check-label">Publicado</label>
                 </div>
               </div>
