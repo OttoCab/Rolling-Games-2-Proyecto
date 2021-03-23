@@ -1,7 +1,11 @@
 import { Juegos } from "./ClasesAdmin.js";
 
 let arregloJuegos = [];
-
+const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
+let btnAgregar = document.getElementById('btnAgregar');
+btnAgregar.addEventListener('click', function () {
+  modalJuego.show();
+})
 // let boton = document.getElementById('btnAgregar');
 // boton.addEventListener('click',CampoRequerido);
 
@@ -28,5 +32,22 @@ window.agregarJuego = function (event) {
   console.log(arregloJuegos);
 
   // se guarda en localstorage
-    localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
+  localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
+  limpiarForm();
+  Swal.fire(
+    'Juego Nuevo!',
+    'El juego fue guardado!',
+    'success'
+  );
+  //cerrar la ventana modal
+  modalJuego.hide();
 };
+
+function limpiarForm() {
+  let formulario = document.getElementById('formJuegos');
+  formulario.reset();
+  codigo.className = 'form-control';
+  nombre.className = 'form-control';
+  categoria.className = 'form-control';
+  descripcion.className = 'form-control';
+}

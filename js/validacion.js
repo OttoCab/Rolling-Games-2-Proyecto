@@ -32,20 +32,6 @@ let checkPublicado = document.getElementById('publicado');
 //     }
 // }
 
-// function validarGeneral(event){
-//     event.preventDefault();
-//     console.log(event);
-//     if(CampoRequerido(document.getElementById('codigo')) &&
-//     CampoRequerido(document.getElementById('nombre')) &&
-//     CampoRequerido(document.getElementById('categoria')) &&
-//     ValidarDescripcion(document.getElementById('descripcion'))){
-//         alert('bien');
-//         limpiarForm();
-//     }else{
-//         alert('mal');
-//     }
-// }
-
 
 // function limpiarForm(){
 //     let formulario = document.getElementById('formJuegos');
