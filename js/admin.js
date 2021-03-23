@@ -3,6 +3,13 @@ import { Juegos } from "./ClasesAdmin.js";
 let arregloJuegos = [];
 const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
 let btnAgregar = document.getElementById('btnAgregar');
+
+//cuando modificarJuego se false quiero AGREGAR un nuevo juego
+//cuando modificarJuego se true quiero modificar un juego existente
+//esta en false porqeu se asume que se quiere agregar antes de modificar
+let modificarJuego = false;
+
+
 //funcion para mostrar modal
 btnAgregar.addEventListener('click', function () {
   modalJuego.show();
@@ -97,7 +104,7 @@ function cargarTabla(_arregloJuegos) {
       <button class="iconos">
         <i class="publicado far fa-star"></i>
       </button>
-      <button class="iconos">
+      <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
         <i class="editar far fa-edit"></i>
       </button>
       <button class="iconos" onclick="eliminarJuego(this)" id="${_arregloJuegos[i].codigo}">
@@ -139,4 +146,22 @@ window.eliminarJuego = function(boton){
       )
     }
   })
+}
+
+//EJM = elegir Juego a modificar
+window.EJM = function(boton){
+  console.log(boton.id);
+  //busco el objeto del arreglo, fine devuelve el primer objeto que cumple la funcion
+  let JuegoeEncontrado = arregloJuegos.find(function (producto){
+    return producto.codigo === boton.id;
+  });
+  console.log(JuegoeEncontrado);
+  //traer los datos del juego al formulario
+  document.getElementById('codigo').value = JuegoeEncontrado.codigo;
+  document.getElementById('nombre').value = JuegoeEncontrado.nombre;
+  document.getElementById('categoria').value = JuegoeEncontrado.categoria;
+  document.getElementById('descripcion').value = JuegoeEncontrado.descripcion;
+  document.getElementById('imagen').value = JuegoeEncontrado.imagen;
+  // muestro la ventana modal
+  modalJuego.show();
 }
