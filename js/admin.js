@@ -16,7 +16,7 @@ btnAgregar.addEventListener('click', function () {
   modalJuego.show();
 })
 
-datosLocalStorage();
+  datosLocalStorage();
 // let boton = document.getElementById('btnAgregar');
 // boton.addEventListener('click',CampoRequerido);
 
@@ -102,8 +102,12 @@ function cargarTabla(_arregloJuegos) {
       </div>
     </td>
     <td>
+      <button class="iconos" onclick="destacar(this)" id="estrella">
+        <i class="publicado far fa-star" ></i>
+      </button>
+      
       <button class="iconos">
-        <i class="publicado far fa-star"></i>
+        <i class="publicado fas fa-star" style="color: green"></i>
       </button>
       <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
         <i class="editar far fa-edit"></i>
@@ -114,8 +118,10 @@ function cargarTabla(_arregloJuegos) {
     </td>
   </tr>`
     tablaJuegos.innerHTML += filaJuego;
+
   }
 }
+
 
 window.eliminarJuego = function (boton) {
   console.log(boton.id);
@@ -215,3 +221,6 @@ function modificarJuegoExistente() {
     // se vuelve a cargar la tabla con los datos modificados de LocalStorage
     datosLocalStorage();
 }
+
+
+
