@@ -7,8 +7,7 @@
     <meta name="author" content="Cabanillas Oscar">
     <meta name="keywords" content="Rolling Games, Games, Juegos, Store, Tienda, Compras">
     <meta name="description" content="Tienda de juegos digitales">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/ffca2b7368.js" crossorigin="anonymous"></script>
     <title>Rolling Games | Detalles</title>
@@ -19,8 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Rolling Games</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -43,14 +41,80 @@
         </nav>
     </header>
     <main class="bg-dark">
-        <section class="container">          
-                <p class="text-light">Pagina de Detalles de un Juego</p>                           
+        <section class="text-center" id="tituloJuego">
+            <h2 class="jumbotron bg-dark display-3 pt-5 text-light"></h2>
+            <hr class="text-light">
+        </section>
+        <section>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <iframe width="560" height="400" src="https://www.youtube.com/embed/_BvZvkT5QHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="container-fluid"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/Games/horizon-sliders/Horizon-Zero-Dawn-1.jpg" class="d-block w-50 container-fluid" alt="horizonSlider1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/Games/horizon-sliders/Horizon-Zero-Dawn-2.jpg" class="d-block w-50 container-fluid" alt="horizonSlider2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/Games/horizon-sliders/Horizon-Zero-Dawn-3.jpg" class="d-block w-50 container-fluid" alt="horizonSlider3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section class="container">
+            <article class="row text-light">
+                <div class="col-lg-4">
+                    <h4>Acerca del juego</h4>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12 my-3">Desarrolladora, Guerrilla Games</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Distribuidora, Sony Interactive Entertainment</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Fecha de lanzamiento, PlayStation 4 1 de marzo de 2017 </div>
+                        <div class="col-lg-4 col-sm-12 my-3">Etiquetas, Acción Aventura Mundo abierto RPG</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Clasificación, PEGI 16</div>
+                        <div class="col-lg-4 col-sm-12 my-3">Plataforma, PlayStation 4; PC</div>
+                    </div>
+                    <div>
+                        <h4>Sinopsis: </h4>
+                        <p>La historia de Horizon Zero Dawn se proyecta en el planeta Tierra aproximadamente 1000 años en el futuro, más precisamente al año 3040, en un escenario post-apocalíptico donde los seres humanos han vuelto a la época de las sociedades
+                            tribales primitivas como resultado de una catástrofe desconocida. Con el paso del tiempo, estas tribus adoptaron diferentes costumbres, tradiciones, intereses y creencias. Las tres tribus más conocidas en el mundo de Horizon
+                            Zero Dawn son: Los Nora, Los Carja y Los Oseram. Ahora la especie dominante en el planeta son una raza de máquinas avanzadas. Aunque las tribus coexisten con ellas, muchos de sus habitantes cazan a estas máquinas y utilizan
+                            sus piezas como recursos valiosos ya sea para el comercio o desarrollo. Pero con el paso de los años, estas máquinas se reprodujeron muy rápido, haciéndose más grandes y poderosas, y amenazando la vida de los habitantes primitivos.
+                            Aloy, una joven guerrera de la tribu de los Nora, debe explorar el mundo que conoce para averiguar más detalles de la catástrofe que destruyó al planeta en el pasado y evitar que el ciclo se repita en el futuro.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="mt-4 text-light">
+                <h4 class="mb-4"><b>texto de prueba</b></h4>
+                <div>
+                    <p>parrafo de prueba Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ratione nesciunt rerum consequatur et?</p>
+                </div>
+            </article>
         </section>
     </main>
     <footer class="text-light py-4">
         <section class="container">
             <article class="row">
-
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <h5>Mapa del Sitio:</h5>
                     <ul class="lista">
@@ -72,9 +136,7 @@
     </footer>
     <script src="js/admin.js"></script>
     <script src="js/validacion.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 </body>
 
