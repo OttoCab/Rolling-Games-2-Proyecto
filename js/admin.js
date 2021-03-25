@@ -102,7 +102,7 @@ function cargarTabla(_arregloJuegos) {
       </div>
     </td>
     <td>
-      <button class="iconos" onclick="destacar(this)" id="estrella">
+      <button class="iconos" id="estrella">
         <i class="publicado far fa-star" ></i>
       </button>
       
@@ -122,6 +122,8 @@ function cargarTabla(_arregloJuegos) {
 
     }
 }
+
+
 window.eliminarJuego = function(boton) {
         console.log(boton.id);
         Swal.fire({
