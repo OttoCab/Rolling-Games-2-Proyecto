@@ -24,7 +24,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Tienda</a>
                         </li>
@@ -36,6 +36,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item me-3">
+                            <button class="btn btn-secondary" id='btnAdd' data-bs-toggle="modal"
+                                data-bs-target="#modalLogin"> <strong>Login</strong> </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-secondary" id='btnAdd' data-bs-toggle="modal"
+                                data-bs-target="#modalRegistro"> <strong>Registro</strong></button>
                         </li>
                     </ul>
                 </div>
@@ -53,7 +63,9 @@
                 </div>
             </nav>
             <h5 class="bg-dark text-light my-3">Destacado</h5>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <!-- inicio del carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-center "
+                data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -62,25 +74,72 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner size-carousel">
                     <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-8">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col-sm-12 col-md-4 bg-dark text-light">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"> descripcion123 </p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    <img src="img/Games/crysisremastered2.jpg" class="container-fluid" alt="...">
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-light text-center">Crysis REMASTERED</h5>
+                                        <p class="card-text text-light fw-bolder">Revive el clasico Shooter en primera
+                                            persona, que
+                                            en su dia
+                                            no era posible correrlo ni en computadoras tope de gama</p>
+                                        <div class="d-flex flex-row-reverse ">
+                                            <button class="btn btn-secondary">Ver más</button>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="row" id="listaJuego">
-                            <!-- Aqui van los juegos cargados desde admin -->
-                        </div>                        
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    <img src="img/Games/crysisremastered2.jpg" class="container-fluid" alt="...">
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-light text-center">Crysis REMASTERED</h5>
+                                        <p class="card-text text-light fw-bolder">Revive el clasico Shooter en primera
+                                            persona, que
+                                            en su dia
+                                            no era posible correrlo ni en computadoras tope de gama</p>
+                                        <div class="d-flex flex-row-reverse ">
+                                            <button class="btn btn-secondary">Ver más</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    <img src="img/Games/crysisremastered2.jpg" class="container-fluid" alt="...">
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-light text-center">Crysis REMASTERED</h5>
+                                        <p class="card-text text-light fw-bolder">Revive el clasico Shooter en primera
+                                            persona, que
+                                            en su dia
+                                            no era posible correrlo ni en computadoras tope de gama</p>
+                                        <div class="d-flex flex-row-reverse ">
+                                            <button class="btn btn-secondary">Ver más</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -94,42 +153,43 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-- fin del carousel -->
         </section>
         <section class="container">
             <h5 class="bg-dark text-light mt-3">Novedades</h5>
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselDeNovedades" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
                         <div class="d-flex">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/BioshockRemastered.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/DarkSouls.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doom.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doometernal.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
                         <div class="d-flex">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/overcook.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/overcook2.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/prey.jpg" class="d-block m-2 w-25" alt="...">
                             <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="d-flex">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/BioshockRemastered.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/DarkSouls.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doom.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doometernal.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDeNovedades"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDeNovedades"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
@@ -137,6 +197,108 @@
             </div>
         </section>
     </main>
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id='formLogin' class="container">
+                        <div class="mb-3">
+                            <label class='form-label'><strong>INICIA SESIÓN CON UNA CUENTA DE ROLLING
+                                    GAMES</strong></label>
+                            <input type="email" id="emailLogin" class="form-control"
+                                placeholder="Dirección de correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña"
+                                required>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="d-inline">
+                                <span><input type="checkbox" value="acepto" requerid></span>
+                                <span>Recuerdame</span>
+                            </div>
+                            <a href="Error404.html" class="text-secondary">
+                                ¿Has olvidado tu contraseña?
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100" id="submitLgon">
+                                INICIAR SESÍON AHORA
+                            </button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="">Política de privacidad</a>
+                        </div>
+                        <div class="mb-3">¿No tienes una cuenta de Rolling Games?<a href=""
+                                class="text-dark ps-4">Registrate</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Login -->
+    <!-- Modal Registro -->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="modalRegistroLabel">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecciona tu Pais</option>
+                            <option value="1">Argentina</option>
+                            <option value="2">Brasil</option>
+                            <option value="3">Bolivia</option>
+                            <option value="4">Chile</option>
+                            <option value="5">Paraguay</option>
+                            <option value="6">Uruguay</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <input type="text" id="nombreReg" class="form-control" placeholder="*Nombre" required>
+                        <div style="width: 20px;"></div>
+                        <input type="text" id="apellidoReg" class="form-control" placeholder="*Apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" id="nickReg" class="form-control" placeholder="*Nombre en pantalla" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="emailReg" class="form-control"
+                            placeholder="*Dirección de correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="passReg" class="form-control" placeholder="*Contraseña" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-flex">
+                            <span><input type="checkbox" value="acepto" requerid></span>
+                            <div class="ms-2">
+                                Me gustaría recibir noticias, encuestas y ofertas especiales de Epic Games.
+                            </div>
+
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label>
+                            <span><input type="checkbox" value="acepto" requerid></span>
+                            <span>He leído y acepto las</span>
+                        </label>
+                        <a href="Error404.html">términos del servicio</a>
+                    </div>
+                    <button type="submit" class="btn btn-secondary w-100 py-2" id="submitReg">CONTINUAR</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Registro -->
     <footer class="text-light py-4">
         <section class="container">
             <article class="row">
