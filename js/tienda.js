@@ -10,7 +10,10 @@ function leerInformacion() {
         //limpar los datos del contenedor 
         lista.innerHTML = '';
         for (let i in juegosTienda) {
-            let columna = `<div class="col-sm-12 col-md-8">
+            
+            let columna = 
+            `
+            <div class="col-sm-12 col-md-8">
             <img src="img/Games/${juegosTienda[i].imagen}" class="card-img-top" alt="...">  
             </div>
         <div class="col-sm-12 col-md-4 bg-dark text-light">
@@ -26,3 +29,14 @@ function leerInformacion() {
 }
 }
 
+// `
+//             <div class="col-sm-12 col-md-8">
+//             <img src="img/Games/${juegosTienda[i].imagen}" class="card-img-top" alt="...">  
+//             </div>
+//         <div class="col-sm-12 col-md-4 bg-dark text-light">
+//             <div class="card-body">
+//             <p class="card-text">${juegosTienda[i].nombre}</p>
+//             <h5 class="card-title">${juegosTienda[i].descripcion}</h5>
+//             <a href="detalles.html" class="btn btn-primary">Informacion</a>
+//               </div>
+//         </div> `
