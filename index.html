@@ -150,25 +150,26 @@
     <!-- Modal Login -->
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content"> 
-                <div class="modal-header">                
+            <div class="modal-content">
+                <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>               
+                </div>
                 <div class="modal-body">
                     <form id='formLogin' class="container">
                         <div class="mb-3">
                             <label class='form-label'><strong>INICIA SESIÓN CON UNA CUENTA DE ROLLING
                                     GAMES</strong></label>
                             <input type="email" id="emailLogin" class="form-control"
-                                placeholder="Dirección de correo electrónico">
+                                placeholder="Dirección de correo electrónico" required>
                         </div>
                         <div class="mb-3">
-                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña">
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña"
+                                required>
                         </div>
                         <div class="mb-3 d-flex justify-content-between">
                             <div class="d-inline">
                                 <span><input type="checkbox" value="acepto" requerid></span>
-                                <span>Recuerdame</span>                                                                
+                                <span>Recuerdame</span>
                             </div>
                             <a href="Error404.html" class="text-secondary">
                                 ¿Has olvidado tu contraseña?
@@ -176,13 +177,14 @@
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary w-100" id="submitLgon">
-                                INICIAR SESÍON AHORA 
+                                INICIAR SESÍON AHORA
                             </button>
                         </div>
                         <div class="mb-3 text-center">
                             <a href="">Política de privacidad</a>
                         </div>
-                        <div class="mb-3">¿No tienes una cuenta de Rolling Games?<a href="" class="text-dark ps-4">Registrate</a></div>
+                        <div class="mb-3">¿No tienes una cuenta de Rolling Games?<a href=""
+                                class="text-dark ps-4">Registrate</a></div>
                     </form>
                 </div>
             </div>
@@ -190,6 +192,63 @@
     </div>
     <!-- Fin del Modal Login -->
     <!-- Modal Registro -->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="modalRegistroLabel">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecciona tu Pais</option>
+                            <option value="1">Argentina</option>
+                            <option value="2">Brasil</option>
+                            <option value="3">Bolivia</option>
+                            <option value="4">Chile</option>
+                            <option value="5">Paraguay</option>
+                            <option value="6">Uruguay</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 d-flex">
+                        <input type="text" id="nombreReg" class="form-control" placeholder="*Nombre" required>
+                        <div style="width: 20px;"></div>
+                        <input type="text" id="apellidoReg" class="form-control" placeholder="*Apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" id="nickReg" class="form-control" placeholder="*Nombre en pantalla" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="emailReg" class="form-control"
+                            placeholder="*Dirección de correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="passReg" class="form-control" placeholder="*Contraseña" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-flex">
+                            <span><input type="checkbox" value="acepto" requerid></span>
+                            <div class="ms-2">
+                                Me gustaría recibir noticias, encuestas y ofertas especiales de Epic Games.
+                            </div>
+
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label>
+                            <span><input type="checkbox" value="acepto" requerid></span>
+                            <span>He leído y acepto las</span>
+                        </label>
+                        <a href="Error404.html">términos del servicio</a>
+                    </div>
+                    <button type="submit" class="btn btn-secondary w-100 py-2" id="submitReg">CONTINUAR</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Registro -->
     <footer class="text-light py-4">
         <section class="container">
             <article class="row">
