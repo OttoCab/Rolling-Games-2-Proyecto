@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cabanillas Oscar">
     <meta name="keywords" content="Rolling Games, Games, Juegos, Store, Tienda, Compras">
     <meta name="description" content="Tienda de juegos digitales">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/ffca2b7368.js" crossorigin="anonymous"></script>
     <title>Rolling Games | Official Site</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Rolling Games</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Tienda</a>
                         </li>
@@ -32,6 +36,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item me-3">
+                            <button class="btn btn-secondary" id='btnAdd' data-bs-toggle="modal"
+                                data-bs-target="#modalLogin"> <strong>Login</strong> </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-secondary" id='btnAdd' data-bs-toggle="modal"
+                                data-bs-target="#modalRegistro"> <strong>Registro</strong></button>
                         </li>
                     </ul>
                 </div>
@@ -49,57 +63,17 @@
                 </div>
             </nav>
             <h5 class="bg-dark text-light my-3">Destacado</h5>
-            <!-- <section id="withScrollX">
-                <aside id="padre-movie" class="horizontal-scroll">
-                    <a href="#">
-                        <div class="card smallCard">
-                            <img src="img/Games/crysisremastered2.jpg" class="card-img-top" alt="" height="100%">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="card smallCard">
-                            <img src="img/Games/crysisremastered2.jpg" class="card-img-top" alt="" height="100%">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="card smallCard">
-                            <img src="img/Games/crysisremastered2.jpg" class="card-img-top" alt="" height="100%">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="card smallCard">
-                            <img src="img/Games/crysisremastered2.jpg" class="card-img-top" alt="" height="100%">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="card smallCard">
-                            <img src="img/Games/crysisremastered2.jpg" class="card-img-top" alt="" height="100%">
-                        </div>
-                    </a>
-                </aside>
-            </section> -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselAdmin" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselAdmin" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselAdmin" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselAdmin" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" >
-                        <div class="row" id="listaJuego">
-                            <div class="col-sm-12 col-md-8">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col-sm-12 col-md-4 bg-dark text-light">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"> descripcion </p>
-                                    <a href="detalles.html" class="btn btn-primary">Go somewhere</a>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item active">
                         <div class="row">
                             <div class="col-sm-12 col-md-8">
                                 <img src="img/Games/crysisremastered2.jpg" class="d-block w-100" alt="...">
@@ -107,18 +81,25 @@
                             <div class="col-sm-12 col-md-4 bg-dark text-light">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text"> descripcion </p>
+                                    <p class="card-text"> descripcion123 </p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row" id="listaJuego">
+                            <!-- Aqui van los juegos cargados desde admin -->
+                        </div>
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAdmin"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAdmin"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -126,44 +107,87 @@
         </section>
         <section class="container">
             <h5 class="bg-dark text-light mt-3">Novedades</h5>
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselDeNovedades" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
                         <div class="d-flex">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/BioshockRemastered.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/DarkSouls.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doom.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doometernal.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                            <div class="d-flex">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                            </div>
+                        <div class="d-flex">
+                            <img src="img/Games/overcook.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/overcook2.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/prey.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
+                    </div>
                     <div class="carousel-item">
-                            <div class="d-flex">
-                                <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/horizonzerodawn.jpg" class="d-block m-2 w-25" alt="...">
-                                <img src="img/Games/crysisremastered2.jpg" class="d-block m-2 w-25" alt="...">
-                            </div>
+                        <div class="d-flex">
+                            <img src="img/Games/BioshockRemastered.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/DarkSouls.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doom.jpg" class="d-block m-2 w-25" alt="...">
+                            <img src="img/Games/doometernal.jpg" class="d-block m-2 w-25" alt="...">
                         </div>
+                    </div>
                 </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button> 
-        </div>
-    </section>       
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDeNovedades"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDeNovedades"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
     </main>
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-#202020">
+                
+                <div class="modal-body">
+                    <form id='formLogin' class="container">
+                        <div class="mb-3">
+                            <label class='form-label'><strong>INICIA SESIÓN CON UNA CUENTA DE ROLLING
+                                    GAMES</strong></label>
+                            <input type="email" id="emailLogin" class="form-control"
+                                placeholder="Dirección de correo electrónico">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña">
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="d-inline">
+                                <span><input type="checkbox" value="acepto" requerid></span>
+                                <span>Recuerdame</span>                                                                
+                            </div>
+                            <a href="Error404.html" class="text-secondary">
+                                ¿Has olvidado tu contraseña?
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100" id="submitLgon">
+                                INICIAR SESÍON AHORA 
+                            </button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="">Política de privacidad</a>
+                        </div>
+                        <div class="mb-3">¿No tienes una cuenta de Rolling Games?<a href="" class="text-dark ps-4">Registrate</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Login -->
+    <!-- Modal Registro -->
     <footer class="text-light py-4">
         <section class="container">
             <article class="row">
@@ -190,6 +214,9 @@
     <script src="js/detalles.js"></script>
     <script src="js/validacion.js"></script>
     <script src="js/detalle.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
