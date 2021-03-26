@@ -1,74 +1,72 @@
 .lista {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar,
 footer {
-    background-color: rgb(19, 18, 18);
+  background-color: rgb(19, 18, 18);
 }
-
 
 /* control horizontal scroll */
 
 .horizontal-scroll {
-    display: inline-flex;
-    padding: 1px;
+  display: inline-flex;
+  padding: 1px;
 }
 
 #withScrollX {
-    overflow-x: hidden;
-    width: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .smallCard {
-    border: 0;
-    width: 170px;
-    min-width: 170px;
-    min-height: 210px;
-    margin-left: 15px;
-    margin-bottom: 20px;
+  border: 0;
+  width: 170px;
+  min-width: 170px;
+  min-height: 210px;
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
-
 
 /* investigar como usar overflow-x */
 
 .bgId-error {
-    background-color: #111111;
-    font-size: x-large;
+  background-color: #111111;
+  font-size: x-large;
 }
 
-
 /*este es un id para la opción 1*/
-
 
 /* formulario */
 
 .iconos {
-    border: none;
-    background-color: transparent;
-    width: 60px;
+  border: none;
+  background-color: transparent;
+  width: 50px;
 }
 
 .editar {
-    color: yellow;
+  color: yellow;
 }
 
 .eliminar {
-    color: red;
+  color: red;
 }
 
 .publicado {
-    color: white;
+  color: white;
 }
 
-.green{
-    color: green;
+/* CSS Otto */
+.card {
+  background-color: rgb(19, 18, 18);
 }
 
-
-
+.size-carousel {
+  width: 80%;
+}
