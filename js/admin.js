@@ -9,7 +9,6 @@ let btnAgregar = document.getElementById('btnAgregar');
 //esta en false porqeu se asume que se quiere agregar antes de modificar
 let modificarJuego = false;
 
-
 //funcion para mostrar modal
 btnAgregar.addEventListener('click', function() {
     limpiarForm();
@@ -26,14 +25,21 @@ function agregarJuego() {
     let nombre = document.getElementById("nombre").value;
     let categoria = document.getElementById("categoria").value;
     let descripcion = document.getElementById("descripcion").value;
+    let fechaLanzamiento = document.getElementById("fechaLanzamiento").value;
+    let clasificacion = document.getElementById("clasificacion").value;
+    let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById("imagen").value;
-    let publicado = document.getElementById("publicado").value;
+    // let publicado = document.getElementById('Publicado').value;
 
-    let nuevoJuego = new Juegos(
+  
+    let nuevoJuego = new Juegos( 
         codigo,
         nombre,
         categoria,
         descripcion,
+        fechaLanzamiento,
+        clasificacion,
+        desarrolladora,
         imagen,
         publicado
     );
@@ -61,6 +67,9 @@ function limpiarForm() {
     nombre.className = 'form-control';
     categoria.className = 'form-control';
     descripcion.className = 'form-control';
+    fechaLanzamiento.className = 'form-control';
+    clasificacion.className = 'form-control';
+    desarrolladora.className = 'form-control';
     modificarJuego = false;
 }
 
@@ -91,6 +100,9 @@ function cargarTabla(_arregloJuegos) {
     <td>${_arregloJuegos[i].nombre}</td>
     <td>${_arregloJuegos[i].categoria}</td>
     <td>${_arregloJuegos[i].descripcion}</td>
+    <td>${_arregloJuegos[i].fechaLanzamiento}</td>
+    <td>${_arregloJuegos[i].clasificacion}</td>
+    <td>${_arregloJuegos[i].desarrolladora}</td>
     <td>${_arregloJuegos[i].imagen}</td>
     <td>
       <div class="form-check">
@@ -102,12 +114,8 @@ function cargarTabla(_arregloJuegos) {
       </div>
     </td>
     <td>
-      <button class="iconos" id="estrella">
+      <button class="iconos" onclick="destacado(this)" id="${_arregloJuegos[i].codigo}">
         <i class="publicado far fa-star" ></i>
-      </button>
-      
-      <button class="iconos">
-        <i class="publicado fas fa-star" style="color: green"></i>
       </button>
       <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
         <i class="editar far fa-edit"></i>
@@ -121,6 +129,27 @@ function cargarTabla(_arregloJuegos) {
         //tablaJuegos.innerHTML += filaJuego;
 
     }
+}
+
+window.destacado = function(estrella) {
+    console.log(estrella.id);
+    Swal.fire({
+        title: '¿Va a destacar este Juego?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si!',
+        cancelButtonText: 'No!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            estrella.innerHTML = '';
+            estrella.className = "iconos fas fa-star green";
+        }else{
+            estrella.innerHTML = '';
+            estrella.className = "iconos far fa-star publicado";
+        }
+    })
 }
 
 
@@ -168,6 +197,9 @@ window.EJM = function(boton) {
     document.getElementById('nombre').value = JuegoeEncontrado.nombre;
     document.getElementById('categoria').value = JuegoeEncontrado.categoria;
     document.getElementById('descripcion').value = JuegoeEncontrado.descripcion;
+    document.getElementById('fechaLanzamiento').value = JuegoeEncontrado.fechaLanzamiento;
+    document.getElementById('clasificacion').value = JuegoeEncontrado.clasificacion;
+    document.getElementById('desarrolladora').value = JuegoeEncontrado.desarrolladora;
     document.getElementById('imagen').value = JuegoeEncontrado.imagen;
     //modificar juego
     modificarJuego = true;
@@ -198,6 +230,9 @@ function modificarJuegoExistente() {
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let fechaLanzamiento = document.getElementById("fechaLanzamiento").value;
+    let clasificacion = document.getElementById("clasificacion").value;
+    let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById('imagen').value;
     let publicado = document.getElementById('publicado').value;
     // se modifican los valores
@@ -206,6 +241,9 @@ function modificarJuegoExistente() {
             arregloJuegos[i].nombre = nombre;
             arregloJuegos[i].categoria = categoria;
             arregloJuegos[i].descripcion = descripcion;
+            arregloJuegos[i].fechaLanzamiento = fechaLanzamiento;
+            arregloJuegos[i].clasificacion = clasificacion;
+            arregloJuegos[i].desarrolladora = desarrolladora;
             arregloJuegos[i].imagen = imagen;
             arregloJuegos[i].publicado = publicado;
 
@@ -223,3 +261,4 @@ function modificarJuegoExistente() {
     // se vuelve a cargar la tabla con los datos modificados de LocalStorage
     datosLocalStorage();
 }
+

@@ -90,6 +90,9 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">fechaLanzamiento</th>
+                <th scope="col">clasificacion</th>
+                <th scope="col">desarrolladora</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Publicado</th>
                 <th scope="col">Opciones</th>
@@ -181,6 +184,48 @@
                   Debe ingresar mas de 5 caracteres
                 </div>
               </div>
+              <div class="mb3">
+                <label class="form-label">Año de Lanzamiento</label>
+                <input
+                  type="text"
+                  id="fechaLanzamiento"
+                  class="form-control"
+                  placeholder="Ingrese una categoria"
+                  onblur="CampoRequerido(this)"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Debe ingresar una categoria valida
+                </div>
+              </div>
+              <div class="mb3">
+                <label class="form-label">Clasificacion</label>
+                <textarea
+                  id="clasificacion"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Ingrese una descripcion"
+                  onblur="ValidarDescripcion(this)"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">
+                  Debe ingresar mas de 5 caracteres
+                </div>
+              </div>
+              <div class="mb3">
+                <label class="form-label">Desarrolladora</label>
+                <textarea
+                  id="desarrolladora"
+                  rows="3"
+                  class="form-control"
+                  placeholder="Ingrese una descripcion"
+                  onblur="ValidarDescripcion(this)"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">
+                  Debe ingresar mas de 5 caracteres
+                </div>
+              </div>
               <div class="mb-3">
                 <label class="form-label">Imagen</label>
                 <input
@@ -196,6 +241,7 @@
                     type="checkbox"
                     id="publicado"
                     class="form-check-input"
+                    
                   />
                   <label class="form-check-label">Publicado</label>
                 </div>

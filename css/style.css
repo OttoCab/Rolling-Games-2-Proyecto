@@ -51,7 +51,7 @@ footer {
 .iconos {
     border: none;
     background-color: transparent;
-    width: 50px;
+    width: 60px;
 }
 
 .editar {
@@ -64,6 +64,10 @@ footer {
 
 .publicado {
     color: white;
+}
+
+.green{
+    color: green;
 }
 
 
