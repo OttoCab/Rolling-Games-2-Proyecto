@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .lista {
     list-style: none;
     padding: 0;
@@ -39,7 +40,11 @@ footer {
 
 .bgId-error {
     background-color: #111111;
-    font-size: x-large;
+    /*font-size: x-large;*/
+}
+
+.textoId-error {
+    font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -64,4 +69,15 @@ footer {
 
 .publicado {
     color: white;
+}
+
+
+/* CSS Otto */
+
+.card {
+    background-color: rgb(19, 18, 18);
+}
+
+.size-carousel {
+    width: 80%;
 }
