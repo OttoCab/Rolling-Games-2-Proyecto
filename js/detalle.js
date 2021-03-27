@@ -6,7 +6,9 @@ function leerdatoslocal() {
         juegostienda = JSON.parse(localStorage.getItem('ListaDeJuegos'));
         console.log('local', juegostienda)
         let nombre = document.getElementById('tituloJuego');
+        let descripcion = document.getElementById('detalle-descrip')
         nombre.innerHTML = '';
+        descripcion.innerHTML = '';
         for (let i in juegostienda) {
             console.log('iii', i)
             let titulo =
@@ -14,7 +16,9 @@ function leerdatoslocal() {
             <h2 class="jumbotron bg-dark display-3 pt-5 text-light">${juegostienda[i].nombre}</h2>
             <hr class="text-light">
             </section>`;
+            let pDescrip = `<p>${juegostienda[i].descripcion}</p>`;
             nombre.innerHTML = titulo;
+            descripcion.innerHTML = pDescrip;
         }
     }
 }
@@ -38,6 +42,27 @@ function detalleDelJuego() {
             <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].clasificacion}</div>
             `
             lista.innerHTML += columna;
+        }
+    }
+}
+
+let imgJuegos = [];
+armaSlider();
+
+function armaSlider() {
+    console.log('entro funcion')
+    if (localStorage.length > 0) {
+        imgJuegos = JSON.parse(localStorage.getItem('ListaDeJuegos'));
+        let slider = document.getElementById('slider');
+        slider.innerHTML = "";
+        for (let i in imgJuegos) {
+            console.log('dentro del for')
+            slider.innerHTML = slider + `
+            <div class="d-flex justify-content-center">
+                            <div>
+                                <img src="/img/Games/${imgJuegos[i].imagen}" class="d-block w-100" alt="...">
+                            </div>
+                            </div>`
         }
     }
 }
