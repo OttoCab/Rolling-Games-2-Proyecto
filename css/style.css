@@ -1,66 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .lista {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .navbar,
 footer {
-  background-color: rgb(19, 18, 18);
+    background-color: rgb(19, 18, 18);
 }
+
 
 /* control horizontal scroll */
 
 .horizontal-scroll {
-  display: inline-flex;
-  padding: 1px;
+    display: inline-flex;
+    padding: 1px;
 }
 
 #withScrollX {
-  overflow-x: hidden;
-  width: 100%;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .smallCard {
-  border: 0;
-  width: 170px;
-  min-width: 170px;
-  min-height: 210px;
-  margin-left: 15px;
-  margin-bottom: 20px;
+    border: 0;
+    width: 170px;
+    min-width: 170px;
+    min-height: 210px;
+    margin-left: 15px;
+    margin-bottom: 20px;
 }
+
 
 /* investigar como usar overflow-x */
 
 .bgId-error {
-  background-color: #111111;
-  font-size: x-large;
+    background-color: #111111;
+    /*font-size: x-large;*/
 }
 
+.textoId-error {
+    font-family: 'Press Start 2P', cursive;
+}
+
+
 /*este es un id para la opción 1*/
+
 
 /* formulario */
 
 .iconos {
-  border: none;
-  background-color: transparent;
-  width: 50px;
+    border: none;
+    background-color: transparent;
+    width: 50px;
 }
 
 .editar {
-  color: yellow;
+    color: yellow;
 }
 
 .eliminar {
-  color: red;
+    color: red;
 }
 
 .publicado {
-  color: white;
+    color: white;
 }
+
 
 /* CSS Otto */
 .cardotto {
@@ -68,5 +78,5 @@ footer {
 }
 
 .size-carousel {
-  width: 80%;
+    width: 80%;
 }
