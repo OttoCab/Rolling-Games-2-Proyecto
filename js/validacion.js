@@ -9,7 +9,7 @@ function CampoRequerido(input) {
 }
 
 function ValidarDescripcion(descripcion) {
-    if (descripcion.value.trim() !='' && descripcion.value.length >= 5){
+    if (descripcion.value.trim() != '' && descripcion.value.length >= 5) {
         descripcion.className = 'form-control is-valid';
         return true;
     } else {
