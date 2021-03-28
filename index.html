@@ -179,7 +179,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- importante!!!! cuando presiona boton submit valida todos los campos antes de enviar el email -->
-                    <form onsubmit="validarGeneral(event)" id="formRegistro">
+                    <form onsubmit="validarGeneralRegistro(event)" id="formRegistro">
                         <div class="mb-3">
                             <label class="form-label">País *</label>
                             <select class="form-select" id="paisReg" aria-label="Default select example" onblur="validarSelect(this)" required>
@@ -213,7 +213,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email *</label>
-                            <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com" onblur="validarEmail(this)" required>
+                            <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com" onblur="ValidEmail(this)" required>
                             <div class=" invalid-feedback ">
                                 Debe ingresar un email válido
                             </div>
@@ -245,18 +245,6 @@
                             </div>
                         </div>
 
-                        <!-- <div class="mb-3 ">
-                            <div class="form-check ">
-                                <label>
-                                    <span><input type="checkbox" id="terminosReg" class="form-check-input" value="acepto" onblur="validarCheck(this)" requerid></span>
-                                    <span>He leído y acepto los </span>
-                                </label>
-                                <a href="#">términos del servicio</a>
-                                <div class="invalid-feedback">
-                                    Debe aceptar términos y condiciones
-                                </div>
-                            </div>
-                        </div> -->
                         <button type="submit" class="btn btn-primary w-100 py-2" id="submitReg">Enviar</button>
                     </form>
                 </div>
