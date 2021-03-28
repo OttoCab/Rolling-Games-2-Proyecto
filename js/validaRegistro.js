@@ -11,6 +11,13 @@ function CampoRequerido(input) {
 }
 //====================================================================
 
+
+//======= PREGUNTAR A EMI COMO LIMPIAR FORMULARIO AL ABRIR MODAL L!!!!!!!!!!!!!!!!!!!!
+modalRegistro = new bootstrap.Modal(document.getElementById('modalRegistro'));
+limpiarFormRegistro();
+// modalRegistro.show();
+//=========================================================
+
 //-------valida Pais------------------ 
 function validarSelect(paisReg) {
     if (paisReg.value.trim() != "Selecciona tu País") {
@@ -126,17 +133,18 @@ function enviarEmailRegistro() {
     }
 
     //--- prepara email con los datos ingresados en el formulario -----
-    emailjs.send("service_w1eakad", "template_ehorwun", {
+    // era de valentina: emailjs.send("service_w1eakad", "template_ehorwun"
+    emailjs.send("service_x0hl6kg", "template_9n797so", {
         from_name: document.getElementById("nombreReg").value,
-        to_name: "Administrador del sitio",
+        to_name: "Administrador del Rolling Games",
         paisReg: varPais,
         nombreReg: document.getElementById("nombreReg").value,
         nickReg: document.getElementById("nickReg").value,
         emailReg: document.getElementById("emailReg").value,
         passReg: document.getElementById("passReg").value,
         noticiasReg: varNoticias,
-        terminosReg: "Acepto",
-        to_email: "rollinggamesg3@gmail.com"
+        terminosReg: "Acepto"
+            // to_email: "rollinggamesg3@gmail.com"
     }).then(function(response) {
         // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(
