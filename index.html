@@ -13,11 +13,13 @@
 
     <!-- Ventana de alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
-    <!-- email JS para ventana modal de registro -->
+
+    <!-- emailJS de rollinggamesg3@gmail.com para ventana modal de REGISTRO y CONTACTO -->
+    <!--    clave: 1234grupo3 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("user_c7em18P7GVybck6CnN0jx");
+            emailjs.init("user_TgDiJmZLSdjDgcMzAAQJg");
         })();
     </script>
     <!-- ---------------------------------------- -->
@@ -179,7 +181,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- importante!!!! cuando presiona boton submit valida todos los campos antes de enviar el email -->
-                    <form onsubmit="validarGeneral(event)" id="formRegistro">
+                    <form onsubmit="validarGeneralRegistro(event)" id="formRegistro">
                         <div class="mb-3">
                             <label class="form-label">País *</label>
                             <select class="form-select" id="paisReg" aria-label="Default select example" onblur="validarSelect(this)" required>
@@ -213,7 +215,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email *</label>
-                            <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com" onblur="validarEmail(this)" required>
+                            <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com" onblur="ValidEmail(this)" required>
                             <div class=" invalid-feedback ">
                                 Debe ingresar un email válido
                             </div>
@@ -222,7 +224,7 @@
                             <label class="form-label">Contraseña (8 caracteres) *</label>
                             <input type="password" id="passReg" class="form-control" placeholder="Contraseña" onblur="validarPassword(this)" required>
                             <div class=" invalid-feedback ">
-                                La contraseña de tener 8 caracteres
+                                La contraseña no debe ser vacía
                             </div>
                         </div>
 
@@ -230,22 +232,21 @@
                             <!-- campo no obligatorio -->
                             <div class="form-check ">
                                 <input type="checkbox" id="noticiasReg" class="form-check-input">
-                                <label class="form-check-label ">Me gustaría recibir noticias, encuestas y ofertas especiales de Epic Games</label>
+                                <label class="form-check-label ">Me gustaría recibir noticias, encuestas y ofertas especiales de Rolling Games</label>
                             </div>
                         </div>
 
                         <div class="mb-3 ">
                             <div class="form-check ">
-                                <label>
-                                    <span><input type="checkbox" id="terminosReg" class="form-check-input" value="acepto" onblur="validarCheck(this)" requerid></span>
-                                    <span>He leído y acepto los </span>
-                                </label>
+                                <input type="checkbox" id="terminosReg" class="form-check-input" value="acepto" onblur="validarCheck(this)" requerid>
+                                <label class="form-check-label ">He leído y acepto los </label>
                                 <a href="#">términos del servicio</a>
-                                <div class=" invalid-feedback">
+                                <div class="invalid-feedback">
                                     Debe aceptar términos y condiciones
                                 </div>
                             </div>
                         </div>
+
                         <button type="submit" class="btn btn-primary w-100 py-2" id="submitReg">Enviar</button>
                     </form>
                 </div>
@@ -281,7 +282,7 @@
     <script src="js/validacion.js"></script>
     <script src="js/detalle.js"></script>
     <script src="js/tienda.js"></script>
-    <script src="js/validaRegistro.js"></script>
+    <!-- <script src="js/validaRegistro.js"></script> -->
 </body>
 
 </html>
