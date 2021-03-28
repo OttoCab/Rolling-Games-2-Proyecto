@@ -16,7 +16,7 @@ function leerInformacion() {
             <div class="card mb-3 cardotto">
                 <div class="row g-0">
                     <div class="col-md-8">
-                        <img src="img/Games/${juegosTienda[i].imagen}" class="container-fluid" alt="...">
+                        <img src="/img/Games/${juegosTienda[i].imagen}" class="container-fluid" alt="...">
                     </div>
                     <div class="col-md-4 align-self-center">
                         <div class="card-body ">

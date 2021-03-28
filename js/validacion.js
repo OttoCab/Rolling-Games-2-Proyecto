@@ -28,54 +28,14 @@ function ValidEmail(email) {
     }
 }
 
-let checkPublicado = document.getElementById('publicado');
-
-
-
-// checkPublicado.addEventListener('checked', validarPublicado);
+// let checkPublicado = document.getElementById('publicado');
+// checkPublicado.addEventListener('change', validarPublicado);
 // function validarPublicado(){
-//     console.log(checkPublicado.checked);
+//     console.log('desde check');
 //     if(checkPublicado.checked){
-//         checkPublicado.className = 'form-check-input - is-valid';
+//         checkPublicado.className = 'form-check is-valid';    
 //     }else{
-//         heckPublicado.className = 'form-check-input - is-invalid';
+//         checkPublicado.className = 'form-check is-invalid';   
 //     }
 // }
 
-
-// function limpiarForm(){
-//     let formulario = document.getElementById('formJuegos');
-//     formulario.reset();
-//     codigo.className = 'form-control';
-//     nombre.className = 'form-control';
-//     categoria.className = 'form-control';
-//     descripcion.className = 'form-control';
-//  }
-
-
-function ValidConsult(consulta) {
-    if (consulta.value.trim() != "" && consulta.value.length >= 20) {
-        consulta.className = "form-control is-valid"
-        return true;
-    } else {
-        consulta.className = "form-control is-invalid"
-        return false;
-    }
-}
-
-function ValidForm(event) {
-    event.preventDefault();
-    console.log(event);
-    if (CampoRequerido(document.getElementById("Nom")) &&
-        ValidEmail(document.getElementById("email")) &&
-        ValidConsult(document.getElementById("consulta"))) {
-        EnvDatos();
-    } else {
-        alert("datos incorrectos");
-    }
-}
-
-
-function EnvDatos() {
-    console.log("prueba ENVDATOS")
-}
