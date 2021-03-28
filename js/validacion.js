@@ -23,9 +23,7 @@ function ValidarDescripcion(descripcion) {
 // function validarPublicado(){
 //     console.log('desde check');
 //     if(checkPublicado.checked){
-//         checkPublicado.className = 'form-check is-valid';
-//         let pub = true;
-    
+//         checkPublicado.className = 'form-check is-valid';    
 //     }else{
 //         checkPublicado.className = 'form-check is-invalid';   
 //     }

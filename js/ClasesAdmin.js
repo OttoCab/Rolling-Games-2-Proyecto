@@ -1,5 +1,5 @@
 export class Juegos{
-    constructor(codigo,nombre,categoria, descripcion,imagen,fechaLanzamiento,clasificacion,desarrolladora,publicado){
+    constructor(codigo,nombre,categoria, descripcion,fechaLanzamiento,clasificacion,desarrolladora,imagen, publicado){
         this.codigo = codigo;
         this.nombre = nombre;
         this.categoria = categoria;

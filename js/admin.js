@@ -1,5 +1,6 @@
 import { Juegos } from "./ClasesAdmin.js";
 
+
 let arregloJuegos = [];
 const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
 let btnAgregar = document.getElementById('btnAgregar');
@@ -8,6 +9,8 @@ let btnAgregar = document.getElementById('btnAgregar');
 //cuando modificarJuego se true quiero modificar un juego existente
 //esta en false porqeu se asume que se quiere agregar antes de modificar
 let modificarJuego = false;
+
+let publicacion = false;
 
 //funcion para mostrar modal
 btnAgregar.addEventListener('click', function() {
@@ -29,9 +32,24 @@ function agregarJuego() {
     let clasificacion = document.getElementById("clasificacion").value;
     let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById("imagen").value;
-    // let publicado = document.getElementById('Publicado').value;
+    let publicado = document.getElementById("publicado");
+    publicacion = true;
+        if(publicacion === true){
+        publicado.className = 'form-check-input is-valid';    
+    }else{
+        publicado.className = 'form-check-input is-invalid';   
+    } 
 
-  
+    // publicado.addEventListener('change',checkPublicado);
+    // function checkPublicado(){
+    //    console.log("publi");
+    //    if(publicado.checked){
+    //     publicado.className = 'form-check.input is-valid';    
+    // }else{
+    //     publicado.className = 'form-check-input is-invalid';   
+    // } 
+    
+ 
     let nuevoJuego = new Juegos( 
         codigo,
         nombre,
@@ -130,6 +148,8 @@ function cargarTabla(_arregloJuegos) {
 
     }
 }
+
+
 
 window.destacado = function(estrella) {
     console.log(estrella.id);
