@@ -10,7 +10,7 @@ let btnAgregar = document.getElementById('btnAgregar');
 //esta en false porqeu se asume que se quiere agregar antes de modificar
 let modificarJuego = false;
 
-let publicacion = false;
+// let publicacion = false;
 
 //funcion para mostrar modal
 btnAgregar.addEventListener('click', function() {
@@ -33,12 +33,12 @@ function agregarJuego() {
     let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById("imagen").value;
     let publicado = document.getElementById("publicado");
-    publicacion = true;
-        if(publicacion === true){
-        publicado.className = 'form-check-input is-valid';    
-    }else{
-        publicado.className = 'form-check-input is-invalid';   
-    } 
+    // publicacion = true;
+    //     if(publicacion === true){
+    //     publicado.className = 'form-check-input is-valid';    
+    // }else{
+    //     publicado.className = 'form-check-input is-invalid';   
+    // } 
 
     // publicado.addEventListener('change',checkPublicado);
     // function checkPublicado(){

@@ -9,11 +9,21 @@ function CampoRequerido(input) {
 }
 
 function ValidarDescripcion(descripcion) {
-    if (descripcion.value.trim() !='' && descripcion.value.length >= 5){
+    if (descripcion.value.trim() != '' && descripcion.value.length >= 5) {
         descripcion.className = 'form-control is-valid';
         return true;
     } else {
         descripcion.className = 'form-control is-invalid';
+    }
+}
+
+function ValidEmail(email) {
+    let emailRequerido = /\w+@\w+\.[a-z]{2,}$/;
+    if (email.value.trim() != "" && emailRequerido.test(email.value)) {
+        email.className = "form-control is-valid";
+        return true;
+    } else {
+        email.className = "form-control is-invalid";
         return false;
     }
 }

@@ -13,7 +13,7 @@ function leerInformacion() {
             let columna = ''
             if (i == 0) {
                 columna = `<div class="carousel-item active">
-            <div class="card mb-3">
+            <div class="card mb-3 cardotto">
                 <div class="row g-0">
                     <div class="col-md-8">
                         <img src="/img/Games/${juegosTienda[i].imagen}" class="container-fluid" alt="...">
@@ -32,7 +32,7 @@ function leerInformacion() {
         </div>`;
             } else {
                 columna = `<div class="carousel-item">
-                <div class="card mb-3">
+                <div class="card mb-3 cardotto">
                     <div class="row g-0">
                         <div class="col-md-8">
                             <img src="img/Games/${juegosTienda[i].imagen}" class="container-fluid" alt="...">
