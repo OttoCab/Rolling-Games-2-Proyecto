@@ -222,7 +222,7 @@
                             <label class="form-label">Contraseña (8 caracteres) *</label>
                             <input type="password" id="passReg" class="form-control" placeholder="Contraseña" onblur="validarPassword(this)" required>
                             <div class=" invalid-feedback ">
-                                La contraseña de tener 8 caracteres
+                                La contraseña no debe ser vacía
                             </div>
                         </div>
 
@@ -236,16 +236,27 @@
 
                         <div class="mb-3 ">
                             <div class="form-check ">
+                                <input type="checkbox" id="terminosReg" class="form-check-input" value="acepto" onblur="validarCheck(this)" requerid>
+                                <label class="form-check-label ">He leído y acepto los </label>
+                                <a href="#">términos del servicio</a>
+                                <div class="invalid-feedback">
+                                    Debe aceptar términos y condiciones
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="mb-3 ">
+                            <div class="form-check ">
                                 <label>
                                     <span><input type="checkbox" id="terminosReg" class="form-check-input" value="acepto" onblur="validarCheck(this)" requerid></span>
                                     <span>He leído y acepto los </span>
                                 </label>
                                 <a href="#">términos del servicio</a>
-                                <div class=" invalid-feedback">
+                                <div class="invalid-feedback">
                                     Debe aceptar términos y condiciones
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <button type="submit" class="btn btn-primary w-100 py-2" id="submitReg">Enviar</button>
                     </form>
                 </div>

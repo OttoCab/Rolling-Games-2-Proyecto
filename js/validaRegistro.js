@@ -39,14 +39,7 @@ function validarEmail(email) {
 
 //-------Validar Password------------
 function validarPassword(passReg) {
-    // CONTRASEÑA con longitud de 8
-    // al menos 1 minuscula y 1 mayuscula
-    // al menos 1 numero y no espacios es blanco, no caracteres especiales
-    // let expresion = /\w+\[a-z]{8,10}$/;
-    // console.log("contraseña: " + passReg.value)
-    // console.log("test:" + expresion.test(passReg.value))
-    // if (passReg.value.trim() != "" && expresion.test(passReg.value)) {
-    if (passReg.value.trim() != "" && passReg.value.length == 8) {
+    if (passReg.value.trim() != "") {
         passReg.className = "form-control is-valid";
         return true;
     } else {
@@ -131,7 +124,8 @@ function enviarEmail() {
         emailReg: document.getElementById("emailReg").value,
         passReg: document.getElementById("passReg").value,
         noticiasReg: varNoticias,
-        terminosReg: "Acepto"
+        terminosReg: "Acepto",
+        to_email: "rollinggamesg3@gmail.com"
     }).then(function(response) {
         // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(
