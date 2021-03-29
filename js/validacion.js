@@ -42,12 +42,20 @@ function ValidEmail(email) {
 //==============================================================================
 //============ validaciones para MODAL REGISTRO ===============================
 //=============================================================================
+//--------------- trabajar con ventana modal-----------
+// defino ventana modal en una variable global
+const modalRegistro = new bootstrap.Modal(
+    document.getElementById("modalRegistro")
+);
+// queremos que el boton agregar escuche el evento click y muestre la ventana modal
+let btnRegistro = document.getElementById("btnRegistro");
+btnRegistro.addEventListener("click", () => {
+    // mostrar ventana modal
+    modalRegistro.show();
+    limpiarFormRegistro();
+});
+//-------------------------------------------------------
 
-//======= PREGUNTAR A EMI COMO LIMPIAR FORMULARIO AL ABRIR MODAL L!!!!!!!!!!!!!!!!!!!!
-modalRegistro = new bootstrap.Modal(document.getElementById('modalRegistro'));
-limpiarFormRegistro();
-// modalRegistro.show();
-//=========================================================
 
 //-------valida Pais------------------ 
 function validarSelect(paisReg) {
@@ -61,8 +69,9 @@ function validarSelect(paisReg) {
 }
 
 //-------Validar Password------------
+// Contraseña de 8 caracteres
 function validarPassword(passReg) {
-    if (passReg.value.trim() != "") {
+    if (passReg.value.trim() != "" && passReg.value.length == 8) {
         passReg.className = "form-control is-valid";
         return true;
     } else {
@@ -133,9 +142,14 @@ function enviarEmailRegistro() {
 
     //--- prepara si acepta recbir noticias y ofertas
     let varNoticias = "No Acepto"
-    if (noticiasReg.value == "on") {
+    console.log("check noticias=" + noticiasReg.checked);
+    // if (noticiasReg.value == "on") {
+    if (noticiasReg.checked) {
         varNoticias = "Acepto"
+        console.log("varNoticias=" + varNoticias);
+
     }
+    console.log("varNoticias=" + varNoticias);
 
     //--- prepara email con los datos ingresados en el formulario -----
     // era de valentina: emailjs.send("service_w1eakad", "template_ehorwun"
@@ -173,6 +187,7 @@ function enviarEmailRegistro() {
 
 //-- limpia los campos del formulario para permitir nuevo ingreso --
 function limpiarFormRegistro() {
+    console.log("dentro de limpiarformulario")
     document.getElementById("formRegistro").reset();
     document.getElementById("paisReg").className = "form-select";
     document.getElementById("nombreReg").className = "form-control";
