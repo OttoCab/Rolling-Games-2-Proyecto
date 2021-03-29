@@ -1,3 +1,15 @@
+// defino ventana modal en una variable global
+const modalRegistro = new bootstrap.Modal(document.getElementById("modalRegistro"));
+
+// queremos que el boton REGISTRO escuche el evento click y muestre la ventana modal
+let btnRegistro = document.getElementById("btnRegistro");
+btnRegistro.addEventListener("click", () => {
+    modalRegistro.show();
+    limpiarFormRegistro();
+});
+
+
+
 function CampoRequerido(input) {
     if (input.value.trim() === '') {
         input.className = 'form-control is-invalid';
@@ -17,6 +29,7 @@ function ValidarDescripcion(descripcion) {
     }
 }
 
+//-------------- VALIDACIONES CONTACTO ------------------------------
 function ValidEmail(email) {
     let emailRequerido = /\w+@\w+\.[a-z]{2,}$/;
     if (email.value.trim() != "" && emailRequerido.test(email.value)) {
@@ -25,6 +38,15 @@ function ValidEmail(email) {
     } else {
         email.className = "form-control is-invalid";
         return false;
+    }
+}
+
+function ValidarConsult(consulta) {
+    if (consulta.value.trim() != '' && consulta.value.length >= 20) {
+        consulta.className = 'form-control is-valid';
+        return true;
+    } else {
+        consulta.className = 'form-control is-invalid';
     }
 }
 
@@ -39,26 +61,15 @@ function ValidEmail(email) {
 //     }
 // }
 
+// ----------- FIN VALIDACIONES CONTACTO ---------------------------------------
+
 //==============================================================================
 //============ validaciones para MODAL REGISTRO ===============================
 //=============================================================================
-//--------------- trabajar con ventana modal-----------
-// defino ventana modal en una variable global
-const modalRegistro = new bootstrap.Modal(
-    document.getElementById("modalRegistro")
-);
-// queremos que el boton agregar escuche el evento click y muestre la ventana modal
-let btnRegistro = document.getElementById("btnRegistro");
-btnRegistro.addEventListener("click", () => {
-    // mostrar ventana modal
-    modalRegistro.show();
-    limpiarFormRegistro();
-});
-//-------------------------------------------------------
-
 
 //-------valida Pais------------------ 
 function validarSelect(paisReg) {
+    // if (paisReg.value != "0") {
     if (paisReg.value.trim() != "Selecciona tu País") {
         paisReg.className = "form-select is-valid";
         return true;
@@ -83,11 +94,9 @@ function validarPassword(passReg) {
 //-------valida acepto terminos y condiciones------------------
 function validarCheck(terminosReg) {
     if (terminosReg.checked) {
-        console.log("acepto terminos")
         terminosReg.className = "form-check-input is-valid";
         return true;
     } else {
-        console.log("NO acepto terminos")
         terminosReg.className = "form-check-input is-invalid";
         return false;
     }
@@ -142,28 +151,23 @@ function enviarEmailRegistro() {
 
     //--- prepara si acepta recbir noticias y ofertas
     let varNoticias = "No Acepto"
-    console.log("check noticias=" + noticiasReg.checked);
-    // if (noticiasReg.value == "on") {
     if (noticiasReg.checked) {
         varNoticias = "Acepto"
-        console.log("varNoticias=" + varNoticias);
-
     }
-    console.log("varNoticias=" + varNoticias);
 
     //--- prepara email con los datos ingresados en el formulario -----
     // era de valentina: emailjs.send("service_w1eakad", "template_ehorwun"
     emailjs.send("service_x0hl6kg", "template_9n797so", {
-        from_name: document.getElementById("nombreReg").value,
-        to_name: "Administrador del Rolling Games",
+        from_name: "Rollling Games",
+        to_name: document.getElementById("nombreReg").value,
         paisReg: varPais,
         nombreReg: document.getElementById("nombreReg").value,
         nickReg: document.getElementById("nickReg").value,
         emailReg: document.getElementById("emailReg").value,
         passReg: document.getElementById("passReg").value,
         noticiasReg: varNoticias,
-        terminosReg: "Acepto"
-            // to_email: "rollinggamesg3@gmail.com"
+        terminosReg: "Acepto",
+        email: document.getElementById("emailReg").value
     }).then(function(response) {
         // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(
@@ -187,7 +191,6 @@ function enviarEmailRegistro() {
 
 //-- limpia los campos del formulario para permitir nuevo ingreso --
 function limpiarFormRegistro() {
-    console.log("dentro de limpiarformulario")
     document.getElementById("formRegistro").reset();
     document.getElementById("paisReg").className = "form-select";
     document.getElementById("nombreReg").className = "form-control";
