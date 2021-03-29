@@ -1,24 +1,20 @@
 let juegostienda = [];
-leerdatoslocal();
+tituloJuego();
 
-function leerdatoslocal() {
+function tituloJuego() {
     if (localStorage.length > 0) {
         juegostienda = JSON.parse(localStorage.getItem('ListaDeJuegos'));
-        console.log('local', juegostienda)
-        let nombre = document.getElementById('tituloJuego');
-        let descripcion = document.getElementById('detalle-descrip')
+        // console.log('local', juegostienda)
+        // let nombre = document.getElementById('tituloJuego');
+        // let descripcion = document.getElementById('detalle-descrip')
         nombre.innerHTML = '';
-        descripcion.innerHTML = '';
+        // descripcion.innerHTML = '';
         for (let i in juegostienda) {
             console.log('iii', i)
             let titulo =
-                `<section class="text-center" id="tituloJuego">
-            <h2 class="jumbotron bg-dark display-3 pt-5 text-light">${juegostienda[i].nombre}</h2>
-            <hr class="text-light">
-            </section>`;
-            let pDescrip = `<p>${juegostienda[i].descripcion}</p>`;
-            nombre.innerHTML = titulo;
-            descripcion.innerHTML = pDescrip;
+                `<h2 class="bg-dark display-3 pt-5 text-light">{juegostienda[i].nombre}</h2>`;
+            // let pDescrip = `<p>${juegostienda[i].descripcion}</p>`;
+            nombre.innerHTML += titulo;
         }
     }
 }

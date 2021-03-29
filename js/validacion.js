@@ -28,14 +28,3 @@ function ValidEmail(email) {
     }
 }
 
-// let checkPublicado = document.getElementById('publicado');
-// checkPublicado.addEventListener('change', validarPublicado);
-// function validarPublicado(){
-//     console.log('desde check');
-//     if(checkPublicado.checked){
-//         checkPublicado.className = 'form-check is-valid';    
-//     }else{
-//         checkPublicado.className = 'form-check is-invalid';   
-//     }
-// }
-

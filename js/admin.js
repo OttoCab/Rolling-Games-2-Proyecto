@@ -1,6 +1,5 @@
 import { Juegos } from "./ClasesAdmin.js";
 
-
 let arregloJuegos = [];
 const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
 let btnAgregar = document.getElementById('btnAgregar');
@@ -32,24 +31,15 @@ function agregarJuego() {
     let clasificacion = document.getElementById("clasificacion").value;
     let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById("imagen").value;
-    let publicado = document.getElementById("publicado");
-    // publicacion = true;
-    //     if(publicacion === true){
-    //     publicado.className = 'form-check-input is-valid';    
-    // }else{
-    //     publicado.className = 'form-check-input is-invalid';   
-    // } 
+    // let publicado = document.getElementById("publicado");
+    let publicado = document.getElementById('publicado');
+    publicado.addEventListener('change', validarTerminos);
+    function validarTerminos(){
+    console.log("desde check");
+    //explicito = if(true === true) ; implicito if (true)
+    }
 
-    // publicado.addEventListener('change',checkPublicado);
-    // function checkPublicado(){
-    //    console.log("publi");
-    //    if(publicado.checked){
-    //     publicado.className = 'form-check.input is-valid';    
-    // }else{
-    //     publicado.className = 'form-check-input is-invalid';   
-    // } 
     
- 
     let nuevoJuego = new Juegos( 
         codigo,
         nombre,
