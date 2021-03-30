@@ -1,4 +1,4 @@
-// defino ventana modal en una variable global
+// -----  defino ventana modal REGISTRO en una variable global ---------------
 const modalRegistro = new bootstrap.Modal(document.getElementById("modalRegistro"));
 
 // queremos que el boton REGISTRO escuche el evento click y muestre la ventana modal
@@ -8,8 +8,7 @@ btnRegistro.addEventListener("click", () => {
     limpiarFormRegistro();
 });
 
-
-
+//-------------------- VALIDACIONES CRUD ------------------------
 function CampoRequerido(input) {
     if (input.value.trim() === '') {
         input.className = 'form-control is-invalid';
@@ -41,26 +40,67 @@ function ValidEmail(email) {
     }
 }
 
-function ValidarConsult(consulta) {
-    if (consulta.value.trim() != '' && consulta.value.length >= 20) {
-        consulta.className = 'form-control is-valid';
+//-------valida asunto------------------ 
+function validarAsunto(asunto) {
+    if (asunto.value.trim() != "Seleccione un motivo") {
+        asunto.className = "form-select is-valid";
         return true;
     } else {
-        consulta.className = 'form-control is-invalid';
+        asunto.className = "form-select is-invalid";
+        return false;
     }
 }
 
-// let checkPublicado = document.getElementById('publicado');
-// checkPublicado.addEventListener('change', validarPublicado);
-// function validarPublicado(){
-//     console.log('desde check');
-//     if(checkPublicado.checked){
-//         checkPublicado.className = 'form-check is-valid';    
-//     }else{
-//         checkPublicado.className = 'form-check is-invalid';   
-//     }
-// }
+function validarGeneralContacto(event) {
+    event.preventDefault();
+    if (CampoRequerido(document.getElementById("nom")) &&
+        ValidEmail(document.getElementById("email")) &&
+        validarAsunto(document.getElementById("asunto")) &&
+        ValidarDescripcion(document.getElementById("consulta"))) {
+        // --- debo mandar el mail ----
+        console.log("ok validacion. llama a enviar email")
+        enviarEmailContacto();
+    } else {
+        // ---- debo mostrar error y no mandar mail ----
+        Swal.fire(
+            "Datos Incorrectos",
+            "Por favor, verifique.",
+            "warning"
+        );
+    }
+}
 
+function enviarEmailContacto() {
+    //--- prepara si acepta recbir novedades
+    let varNovedades = "No Acepto"
+    if (novedades.checked) {
+        varNovedades = "Acepto"
+    }
+    emailjs.send("service_x0hl6kg", "template_4qdp39z", {
+        nom: document.getElementById("nom").value,
+        email: document.getElementById("email").value,
+        asunto: document.getElementById("asunto").value,
+        consulta: document.getElementById("consulta").value,
+        novedades: varNovedades
+    }).then(function(response) {
+        console.log("email enviado ok")
+            // se ejecuta cuando todo salio bien (se cumplio la promesa)
+        Swal.fire(
+            "Solicitud de Registro",
+            "El email se envió correctamente",
+            "success"
+        );
+        // limpiarFormContacto();
+    }, function(error) {
+        console.log("ERROR en email")
+            //se ejecuta cuando algo salio mal al enviar el email
+        Swal.fire(
+            "Contáctanos",
+            "Ocurrió un error. Inténtelo en unos minutos.",
+            "warning"
+        );
+    })
+}
 // ----------- FIN VALIDACIONES CONTACTO ---------------------------------------
 
 //==============================================================================
