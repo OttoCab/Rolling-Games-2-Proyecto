@@ -1,5 +1,5 @@
-// defino ventana modal en una variable global
-// const modalRegistro = new bootstrap.Modal(document.getElementById("modalRegistro"));
+// -----  defino ventana modal REGISTRO en una variable global ---------------
+const modalRegistro = new bootstrap.Modal(document.getElementById("modalRegistro"));
 
 // queremos que el boton REGISTRO escuche el evento click y muestre la ventana modal
 let btnRegistro = document.getElementById("btnRegistro");
@@ -8,7 +8,7 @@ btnRegistro.addEventListener("click", () => {
     limpiarFormRegistro();
 });
 
-//===================================================================================
+//-------------------- VALIDACIONES CRUD ------------------------
 function CampoRequerido(input) {
     if (input.value.trim() === '') {
         input.className = 'form-control is-invalid';
@@ -53,7 +53,6 @@ function validarAsunto(asunto) {
 
 function validarGeneralContacto(event) {
     event.preventDefault();
-    console.log("en validar general contacto");
     if (CampoRequerido(document.getElementById("nom")) &&
         ValidEmail(document.getElementById("email")) &&
         validarAsunto(document.getElementById("asunto")) &&
@@ -71,23 +70,18 @@ function validarGeneralContacto(event) {
     }
 }
 
-// function validarGeneralContacto(event) {
-//     console.log("ok validacion. llama a enviar email")
-//     console.log(event)
-//     event.preventDefault();
-//     enviarEmailContacto();
-// }
-
-
 function enviarEmailContacto() {
-    console.log("en enviar email")
-
+    //--- prepara si acepta recbir novedades
+    let varNovedades = "No Acepto"
+    if (novedades.checked) {
+        varNovedades = "Acepto"
+    }
     emailjs.send("service_x0hl6kg", "template_4qdp39z", {
         nom: document.getElementById("nom").value,
         email: document.getElementById("email").value,
         asunto: document.getElementById("asunto").value,
         consulta: document.getElementById("consulta").value,
-        novedades: document.getElementById("novedades").value
+        novedades: varNovedades
     }).then(function(response) {
         console.log("email enviado ok")
             // se ejecuta cuando todo salio bien (se cumplio la promesa)
@@ -107,8 +101,6 @@ function enviarEmailContacto() {
         );
     })
 }
-
-
 // ----------- FIN VALIDACIONES CONTACTO ---------------------------------------
 
 //==============================================================================

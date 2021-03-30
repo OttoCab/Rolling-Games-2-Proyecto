@@ -81,3 +81,12 @@ footer {
 .size-carousel {
     width: 80%;
 }
+
+
+/* Avatar en acerca de nosotros */
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}

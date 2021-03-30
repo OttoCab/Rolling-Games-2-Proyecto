@@ -1,14 +1,10 @@
 # Proyecto Rolling Games
 
-_Este proyecto es una página web con un catálogo de juegos al estilo Steam, Epic Games, etc. Este sitio está compuesto por una página principal con el catálogo de juegos disponibles, y otra página desde donde se administra toda la información de los juegos disponibles (CRUD) y se almacenan en LocalStorage._
+_Este proyecto es una página web con un catálogo de juegos al estilo Epic Games. Este sitio está compuesto por una página principal con el catálogo de juegos disponibles, y otra página desde donde se administra toda la información de los juegos (CRUD) y se almacenan en LocalStorage._
 
 ## Demo del Proyecto:
 
-_Mirá una demo del:_ [Proyecto Rolling Games](https://trello.com/b/aG1xYAVA/comision-1a-2do-sem)
-
-## Pre-requisitos ?????????
-
-_Aquí especifico si tengo que instalar algo previo para usar este repo_
+_Mirá una demo del NETLIFY:_ [Proyecto Rolling Games](https://trello.com/b/aG1xYAVA/comision-1a-2do-sem)
 
 ## Pasos a seguir para usar el proyecto:
 
@@ -22,6 +18,9 @@ _Se agregaron las siguientes librerias al proyecto:_
 1. [Bootstrap v5.0.0](https://getbootstrap.com/)
 1. [Sweetalert2](https://sweetalert2.github.io/)
 1. [Fontawesome](https://fontawesome.com/)
+1. [emailJS](https://www.emailjs.com/)
+1. [Canva](https://www.canva.com)
+1. [VisualCode Studio](https://code.visualstudio.com/)
 
 ## Autores
 
@@ -29,14 +28,14 @@ _Se agregaron las siguientes librerias al proyecto:_
 - Slaya Micael Ostapczuk
 - Janeth Aymará Zúñiga
 - Oscar Cabanillas
-- Valentina Iramain [CV](https://github.com/viramain/viramain.github.io.git)
-
+- Juan María Ponce
+- Valentina Iramain 
 
 ## Agradecimientos a:
 
 - Rolling Code School
-- Emilse Arias (Mentora)
-- Jony Plodzien
-- Facundo Gramajo (Consultas)
-- Juan José Aloso (Consultas)
-- Sergio Morán (Comision 1A)
+- Emilse Arias
+- Jony Plodzien 
+- Facundo Gramajo 
+- Juan José Alonso 
+- Sergio Morán 
