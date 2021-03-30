@@ -11,6 +11,13 @@ function CampoRequerido(input) {
 }
 //====================================================================
 
+
+//======= PREGUNTAR A EMI COMO LIMPIAR FORMULARIO AL ABRIR MODAL L!!!!!!!!!!!!!!!!!!!!
+modalRegistro = new bootstrap.Modal(document.getElementById('modalRegistro'));
+limpiarFormRegistro();
+// modalRegistro.show();
+//=========================================================
+
 //-------valida Pais------------------ 
 function validarSelect(paisReg) {
     if (paisReg.value.trim() != "Selecciona tu País") {
@@ -22,13 +29,24 @@ function validarSelect(paisReg) {
     }
 }
 
-//-------Validar email------------
-function validarEmail(email) {
-    // en la variable "expresion" crea patron para validar email
-    //w permite mayusculas y minusculas y del 0 al 9 
-    let expresion = /\w+@\w+\.[a-z]{2,}$/;
-    // expresion.test(email.value) es V o F  indica si hay texto escrito
-    if (email.value.trim() != "" && expresion.test(email.value)) {
+//-------Validar email--(USARE LA DE JANETH PARA NO DUPLICAR) ----------
+// function validarEmail(email) {
+//     // en la variable "expresion" crea patron para validar email
+//     //w permite mayusculas y minusculas y del 0 al 9 
+//     let expresion = /\w+@\w+\.[a-z]{2,}$/;
+//     // expresion.test(email.value) es V o F  indica si hay texto escrito
+//     if (email.value.trim() != "" && expresion.test(email.value)) {
+//         email.className = "form-control is-valid";
+//         return true;
+//     } else {
+//         email.className = "form-control is-invalid";
+//         return false;
+//     }
+// }
+
+function ValidEmail(email) {
+    let emailRequerido = /\w+@\w+\.[a-z]{2,}$/;
+    if (email.value.trim() != "" && emailRequerido.test(email.value)) {
         email.className = "form-control is-valid";
         return true;
     } else {
@@ -39,14 +57,7 @@ function validarEmail(email) {
 
 //-------Validar Password------------
 function validarPassword(passReg) {
-    // CONTRASEÑA con longitud de 8
-    // al menos 1 minuscula y 1 mayuscula
-    // al menos 1 numero y no espacios es blanco, no caracteres especiales
-    // let expresion = /\w+\[a-z]{8,10}$/;
-    // console.log("contraseña: " + passReg.value)
-    // console.log("test:" + expresion.test(passReg.value))
-    // if (passReg.value.trim() != "" && expresion.test(passReg.value)) {
-    if (passReg.value.trim() != "" && passReg.value.length == 8) {
+    if (passReg.value.trim() != "") {
         passReg.className = "form-control is-valid";
         return true;
     } else {
@@ -69,17 +80,17 @@ function validarCheck(terminosReg) {
 }
 
 // ---- Antes de enviar solicitud de registro realiza validacion general -------
-function validarGeneral(event) {
+function validarGeneralRegistro(event) {
     // --- detener el evento submit para ejecutar funciones de validacion antes de enviar ---
     event.preventDefault();
     if (validarSelect(document.getElementById("paisReg")) &&
         CampoRequerido(document.getElementById("nombreReg")) &&
         CampoRequerido(document.getElementById("nickReg")) &&
-        validarEmail(document.getElementById("emailReg")) &&
+        ValidEmail(document.getElementById("emailReg")) &&
         validarPassword(document.getElementById("passReg")) &&
         validarCheck(document.getElementById("terminosReg"))) {
         // --- debo mandar el mail ----
-        enviarEmail();
+        enviarEmailRegistro();
     } else {
         // ---- debo mostrar error y no mandar mail ----
         Swal.fire(
@@ -91,7 +102,7 @@ function validarGeneral(event) {
 }
 
 // Se usa emailJS y se trae el formato del objeto de emailjs para completar con los valores de los input
-function enviarEmail() {
+function enviarEmailRegistro() {
     // ---- Prepara nombre del pais seleccionado
     let varPais = "";
     switch (document.getElementById("paisReg").value) {
@@ -122,9 +133,10 @@ function enviarEmail() {
     }
 
     //--- prepara email con los datos ingresados en el formulario -----
-    emailjs.send("service_w1eakad", "template_ehorwun", {
+    // era de valentina: emailjs.send("service_w1eakad", "template_ehorwun"
+    emailjs.send("service_x0hl6kg", "template_9n797so", {
         from_name: document.getElementById("nombreReg").value,
-        to_name: "Administrador del sitio",
+        to_name: "Administrador del Rolling Games",
         paisReg: varPais,
         nombreReg: document.getElementById("nombreReg").value,
         nickReg: document.getElementById("nickReg").value,
@@ -132,6 +144,7 @@ function enviarEmail() {
         passReg: document.getElementById("passReg").value,
         noticiasReg: varNoticias,
         terminosReg: "Acepto"
+            // to_email: "rollinggamesg3@gmail.com"
     }).then(function(response) {
         // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(

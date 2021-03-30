@@ -23,7 +23,7 @@ function leerInformacion() {
                             <h5 class="card-title text-light text-center">${juegosTienda[i].nombre}</h5>
                             <p class="card-text text-light fw-bolder">${juegosTienda[i].descripcion}</p>
                             <div class="d-flex flex-row-reverse ">
-                                <button class="btn btn-secondary"><a href="detalles.html" class='text-light'>Ver más</a></button>
+                                <button class="btn btn-secondary"><a href="detalles.html" class='text-light' onclick="detalle(${juegosTienda[i].codigo})" id="${juegosTienda[i].codigo}">Ver más</a></button>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ function leerInformacion() {
                                 <h5 class="card-title text-light text-center">${juegosTienda[i].nombre}</h5>
                                 <p class="card-text text-light fw-bolder">${juegosTienda[i].descripcion}</p>
                                 <div class="d-flex flex-row-reverse ">
-                                <button class="btn btn-secondary"><a href="detalles.html" class='text-light'>Ver más</a></button>
+                                <button class="btn btn-secondary"><a href="detalles.html" class='text-light' onclick="detalle(${juegosTienda[i].codigo})" id="${juegosTienda[i].codigo}">Ver más</a></button>
                                 </div>
                             </div>
                         </div>
@@ -53,4 +53,9 @@ function leerInformacion() {
             lista.innerHTML += columna;
         }
     }
+}
+
+window.detalle = function(codigo) {
+    localStorage.setItem('detalleKEY', JSON.stringify(codigo))
+    window.location.href = '/detalle.html'
 }
