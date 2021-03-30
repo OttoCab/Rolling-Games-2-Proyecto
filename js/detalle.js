@@ -13,9 +13,11 @@ function detalleDelJuego() {
         //crea la card con la los datos de juego
         let lista = document.getElementById('juegoDetalle');
         let slider = document.getElementById('slider');
+        let descripcion = document.getElementById('juegosDescripcion')
         let nombre = document.getElementById('tituloJuego');
         //limpar los datos del contenedor 
         lista.innerHTML = '';
+        descripcion.innerHTML = '';
         slider.innerHTML = '';
         nombre.innerHTML = '';
         for (let i in detalleJuego) {
@@ -30,13 +32,15 @@ function detalleDelJuego() {
                 <img src="/img/Games/${juegostienda[i].imagen}" class="d-block w-100" alt="...">
                 </div>
                 </div>`;
-                let columna = `
-            <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].categoria}</div>
-                <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].descripcion}</div>
-                <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].fechaLanzamiento}</div>
-                <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].clasificacion}</div>
-                <div class="col-lg-4 col-sm-12 my-3">${detalleJuego[i].desarrolladora} </div>`
+                let columna =
+                    `
+                    <div class="col-lg-6 col-sm-12 my-3"><h6>Categoría:</h6><div>${detalleJuego[i].categoria}</div></div>
+                    <div class="col-lg-6 col-sm-12 my-3"><h6>Clasificación:</h6><div>${detalleJuego[i].clasificacion}</div></div>
+            <div class="col-lg-6 col-sm-12 my-3"><h6>Desarrolladora:</h6><div>${detalleJuego[i].desarrolladora}</div></div>
+            <div class="col-lg-6 col-sm-12 my-3"><h6>Lanzamiento:</h6><div>${detalleJuego[i].fechaLanzamiento}</div></div>`
                 lista.innerHTML = columna;
+                let descripcion2 = `<div class="col-lg-12 my-3">${detalleJuego[i].descripcion}</div>`;
+                descripcion.innerHTML = descripcion2;
             }
         }
     }
