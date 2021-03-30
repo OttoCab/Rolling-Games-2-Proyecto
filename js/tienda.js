@@ -56,6 +56,6 @@ function leerInformacion() {
 }
 
 window.detalle = function(codigo) {
-    localStorage.setItem('detalleKEY', JSON.stringify(codigo))
+    localStorage.setItem('detalleKEY', JSON.stringify(codigo));
     window.location.href = '/detalle.html'
 }
