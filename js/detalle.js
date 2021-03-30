@@ -7,8 +7,8 @@ function leerdatoslocal() {
         console.log('local', juegostienda)
         let nombre = document.getElementById('tituloJuego');
         let descripcion = document.getElementById('detalle-descrip')
-        nombre.innerHTML = '';
-        descripcion.innerHTML = '';
+        nombre.innerHTML ='';
+        descripcion.innerHTML ='';
         for (let i in juegostienda) {
             console.log('iii', i)
             let titulo =
