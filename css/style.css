@@ -80,21 +80,18 @@ footer {
 .size-carousel {
     width: 80%;
 }
-<<<<<<< HEAD
 /*estrella destacado*/
 .green{
     color: green;
 }
 .bordes{
     border: white;
-=======
-
+}
+    
 
 /* Avatar en acerca de nosotros */
-
 .avatar {
     width: 120px;
     height: 120px;
     border-radius: 100%;
->>>>>>> 3a2b139fc599116528df21c85afb1212dd5b56bf
 }
