@@ -1,8 +1,7 @@
 let stateLoginAdmin = false;
+//areYouLoged();
 loginAdmin();
-stateLoginAdmin = JSON.parse(localStorage.getItem('LS_User'));
-console.log(stateLoginAdmin);
-console.log('log del authuser');
+// stateLoginAdmin = JSON.parse(localStorage.getItem('LS_User'));
 
 
 // creo la pestaña de admin
@@ -40,4 +39,28 @@ function loginAdmin() {
     ${stateLoginAdmin ? `<li><a href="administracion.html" class="text-secondary">Administracion</a></li>` : ``}
     <li><a href="adn.html" class="text-secondary">Acerca de Nosotros</a></li>
     <li><a href="contacto.html" class="text-secondary">Contacto</a></li>`;
+}
+
+function isLoged(){
+    if(localStorage.getItem('LS_User')){
+        return true
+    } else {
+        return false
+    }
+}
+
+function areYouLoged(){
+    if (isLoged()) {
+        stateLoginAdmin = true;
+        loginAdmin();
+    }else{
+        stateLoginAdmin = false;
+        loginAdmin();
+    }
+}
+
+function loginOut(){
+    stateLoginAdmin = false;
+    loginAdmin();
+    crearModales();
 }

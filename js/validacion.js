@@ -1,20 +1,24 @@
-// Modales de Login y Registro
-// -----  defino ventana modal REGISTRO en una variable global ---------------
 const modalRegistro = new bootstrap.Modal(document.getElementById("modalRegistro"));
-// queremos que el boton REGISTRO escuche el evento click y muestre la ventana modal
-let btnRegistro = document.getElementById("btnRegistro");
-btnRegistro.addEventListener("click", () => {
-    modalRegistro.show();
-    limpiarFormRegistro();
-});
-
 const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
-// queremos que el boton Login escuche el evento click y muestre la ventana modal
-let btnLogin = document.getElementById("btnLogin");
-btnLogin.addEventListener("click", () => {
-    modalLogin.show();
-    limpiarFormRegistro();
-});
+crearModales();
+function crearModales() {
+    // Modales de Login y Registro
+    // -----  defino ventana modal REGISTRO en una variable global ---------------
+    // queremos que el boton REGISTRO escuche el evento click y muestre la ventana modal
+    let btnRegistro = document.getElementById("btnRegistro");
+    btnRegistro.addEventListener("click", () => {
+        modalRegistro.show();
+        limpiarFormRegistro();
+    });
+    // queremos que el boton Login escuche el evento click y muestre la ventana modal
+    let btnLogin = document.getElementById("btnLogin");
+    btnLogin.addEventListener("click", () => {
+        modalLogin.show();
+        limpiarFormLogin();
+    });
+
+}
+
 
 
 //-------------------- VALIDACIONES CRUD ------------------------
@@ -91,18 +95,18 @@ function enviarEmailContacto() {
         asunto: document.getElementById("asunto").value,
         consulta: document.getElementById("consulta").value,
         novedades: varNovedades
-    }).then(function(response) {
+    }).then(function (response) {
         console.log("email enviado ok")
-            // se ejecuta cuando todo salio bien (se cumplio la promesa)
+        // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(
             "Solicitud de Registro",
             "El email se envió correctamente",
             "success"
         );
         // limpiarFormContacto();
-    }, function(error) {
+    }, function (error) {
         console.log("ERROR en email")
-            //se ejecuta cuando algo salio mal al enviar el email
+        //se ejecuta cuando algo salio mal al enviar el email
         Swal.fire(
             "Contáctanos",
             "Ocurrió un error. Inténtelo en unos minutos.",
@@ -217,7 +221,7 @@ function enviarEmailRegistro() {
         noticiasReg: varNoticias,
         terminosReg: "Acepto",
         email: document.getElementById("emailReg").value
-    }).then(function(response) {
+    }).then(function (response) {
         // se ejecuta cuando todo salio bien (se cumplio la promesa)
         Swal.fire(
             "Solicitud de Registro",
@@ -228,7 +232,7 @@ function enviarEmailRegistro() {
         // cerrar la ventana modal
         modalRegistro.hide();
 
-    }, function(error) {
+    }, function (error) {
         //se ejecuta cuando algo salio mal al enviar el email
         Swal.fire(
             "Solicitud de Registro",
@@ -273,20 +277,21 @@ function validarGeneralLogin(event) {
     }
 }
 // btnLoginAdmin = doc
-function loginConfirm(){
+function loginConfirm() {
     let emailLogin = document.getElementById("emailLogin").value;
     let passwordLogin = document.getElementById("passwordLogin").value;
     console.log("entro a la funcion");
     if (emailLogin == "otto@gmail.com" && passwordLogin == "12345678") {
         console.log("entro en el if");
-        class User{
-            constructor(state){
-                this.state = state;
-            }
-        }
-        let UserAdmin = new User(true);
-        localStorage.setItem('LS_User',JSON.stringify(UserAdmin.state)); 
-        loginAdmin();   
+        // class User {
+        //     constructor(state) {
+        //         this.state = state;
+        //     }
+        // }
+        // let UserAdmin = new User(true);
+        // localStorage.setItem('LS_User', JSON.stringify(UserAdmin.state));
+        stateLoginAdmin = true;
+        loginAdmin();
         //window.location = "../administracion.html";
         modalLogin.hide();
     }
@@ -295,9 +300,9 @@ function loginConfirm(){
 
 //-- limpia los campos del formulario para permitir nuevo ingreso --
 function limpiarFormLogin() {
-    document.getElementById("formLogin").reset();    
+    document.getElementById("formLogin").reset();
     document.getElementById("emailLogin").className = "form-control";
-    document.getElementById("passwordLogin").className = "form-control";   
+    document.getElementById("passwordLogin").className = "form-control";
 }
 
 //============== FIN VALIDACIONES PARA MODAL REGISTRO ================
