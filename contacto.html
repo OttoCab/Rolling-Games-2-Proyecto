@@ -38,9 +38,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="index.html">Tienda</a>
+                    <ul class="navbar-nav me-auto" id='navbarLeftRG'>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Tienda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="administracion.html">Administracion</a>
@@ -49,18 +49,18 @@
                             <a class="nav-link" href="adn.html">Acerca de Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="contacto.html">Contacto</a>
-                        </li>
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li> -->
                     </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item me-3">
-                            <button class="btn btn-secondary" id='btnAdd' data-bs-toggle="modal" data-bs-target="#modalLogin"> <strong>Login</strong> </button>
+                    <ul class="navbar-nav" id="navbarRightRG">
+                        <!-- <li class="nav-item me-3">
+                            <button class="btn btn-secondary" id='btnLogin'><strong>Login</strong></button>
                         </li>
                         <li class="nav-item">
-                            <!-- abre ventana modal. Se borra data-bs-toggle="modal" data-bs-target="#modalProducto"-->
-                            <button class="btn btn-secondary" id="btnRegistro"><strong>Registro</strong> </button>
-                            <!-- <button class="btn btn-secondary" id='btnRegistro' data-bs-toggle="modal" data-bs-target="#modalRegistro"> <strong>Registro</strong></button> -->
-                        </li>
+                            abre ventana modal. Se borra data-bs-toggle="modal" data-bs-target="#modalProducto"
+                            <button class="btn btn-secondary" id="btnRegistro"><strong>Registro</strong></button>
+                            <button class="btn btn-secondary" id='btnRegistro' data-bs-toggle="modal" data-bs-target="#modalRegistro"> <strong>Registro</strong></button>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -141,13 +141,148 @@
             </article>
         </section>
     </main>
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id='formLogin' class="container" onsubmit="validarGeneralLogin(event)">
+                        <div class="mb-3">
+                            <label class='form-label'><strong>INICIA SESIÓN CON UNA CUENTA DE ROLLING
+                                    GAMES</strong></label>
+                            <input type="email" id="emailLogin" class="form-control"
+                                placeholder="Dirección de correo electrónico" onblur="ValidEmail(this)" required>
+                            <div class=" invalid-feedback ">
+                                Debe ingresar un email válido
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña"
+                                onblur="validarPassword(this)" required>
+                            <div class=" invalid-feedback ">
+                                La contraseña no debe ser vacía y tener 8 caracteres
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="d-inline">
+                                <span><input type="checkbox" value="acepto" requerid></span>
+                                <span>Recuerdame</span>
+                            </div>
+                            <a href="Error404.html" class="text-secondary">
+                                ¿Has olvidado tu contraseña?
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100" id="submitLogin">
+                                INICIAR SESÍON AHORA
+                            </button>                            
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="">Política de privacidad</a>
+                        </div>
+                        <div class="mb-3">¿No tienes una cuenta de Rolling Games?<a href=""
+                                class="text-dark ps-4">Registrate</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Login -->
 
+    <!-- ----------- inicio Modal Registro ----------------->
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRegistroLabel">Solicitud de Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- importante!!!! cuando presiona boton submit valida todos los campos antes de enviar el email -->
+                    <form onsubmit="validarGeneralRegistro(event)" id="formRegistro">
+                        <div class="mb-3">
+                            <label class="form-label">País *</label>
+                            <select class="form-select" id="paisReg" aria-label="Default select example"
+                                onblur="validarSelect(this)" required>
+                                <option selected>Selecciona tu País</option>
+                                <option value="1">Argentina</option>
+                                <option value="2">Brasil</option>
+                                <option value="3">Bolivia</option>
+                                <option value="4">Chile</option>
+                                <option value="5">Paraguay</option>
+                                <option value="6">Uruguay</option>
+                            </select>
+                            <div class=" invalid-feedback ">
+                                Debe seleccionar su País
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre y Apellido *</label>
+                            <input type="text" id="nombreReg" class="form-control" placeholder="Juan Perez"
+                                onblur="CampoRequerido(this)" required>
+                            <div class=" invalid-feedback ">
+                                Debe ingresar nombre y apellido
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre en Pantalla *</label>
+                            <input type="text" id="nickReg" class="form-control" placeholder="Nick"
+                                onblur="CampoRequerido(this)" required>
+                            <div class=" invalid-feedback ">
+                                Debe ingresar el Nombre con el cual se identificará en pantalla
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email *</label>
+                            <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com"
+                                onblur="ValidEmail(this)" required>
+                            <div class=" invalid-feedback ">
+                                Debe ingresar un email válido
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña (8 caracteres) *</label>
+                            <input type="password" id="passReg" class="form-control" placeholder="Contraseña"
+                                onblur="validarPassword(this)" required>
+                            <div class=" invalid-feedback ">
+                                La contraseña no debe ser vacía y tener 8 caracteres
+                            </div>
+                        </div>
+                        <div class="mb-3 ">
+                            <div class="form-check ">
+                                <input type="checkbox" id="terminosReg" class="form-check-input"
+                                    onchange="validarCheck(this)" checked requerid>
+                                <label class="form-check-label ">He leído y acepto los </label>
+                                <a href="#">términos del servicio</a>
+                                <div class="invalid-feedback">
+                                    Debe aceptar términos y condiciones
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 ">
+                            <!-- campo no obligatorio -->
+                            <div class="form-check ">
+                                <input type="checkbox" id="noticiasReg" class="form-check-input">
+                                <label class="form-check-label ">Me gustaría recibir noticias, encuestas y ofertas
+                                    especiales de Rolling Games</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal Registro -->
     <footer class="text-light py-4 ">
         <section class="container ">
             <article class="row ">
                 <div class="col-sm-12 col-md-6 col-lg-6 ">
                     <h5>Mapa del Sitio:</h5>
-                    <ul class="lista ">
+                    <ul class="lista" id="footerRG">
                         <li><a href="index.html " class="text-secondary ">Tienda</a></li>
                         <li><a href="administracion.html " class="text-secondary ">Administracion</a></li>
                         <li><a href="adn.html " class="text-secondary ">Acerca de Nosotros</a></li>
@@ -165,6 +300,7 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
+    <script src="js/authuser.js"></script>
     <script src="js/validacion.js "></script>
 </body>
 

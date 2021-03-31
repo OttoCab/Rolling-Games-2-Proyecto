@@ -272,15 +272,21 @@ function validarGeneralLogin(event) {
         );
     }
 }
-
+// btnLoginAdmin = doc
 function loginConfirm(){
     let emailLogin = document.getElementById("emailLogin").value;
     let passwordLogin = document.getElementById("passwordLogin").value;
     console.log("entro a la funcion");
     if (emailLogin == "otto@gmail.com" && passwordLogin == "12345678") {
         console.log("entro en el if");
-        stateLoginAdmin = true;
-        loginAdmin();
+        class User{
+            constructor(state){
+                this.state = state;
+            }
+        }
+        let UserAdmin = new User(true);
+        localStorage.setItem('LS_User',JSON.stringify(UserAdmin.state)); 
+        loginAdmin();   
         //window.location = "../administracion.html";
         modalLogin.hide();
     }

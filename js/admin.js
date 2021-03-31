@@ -114,7 +114,7 @@ function cargarTabla(_arregloJuegos) {
         <td>${_arregloJuegos[i].publicado}</td>
 
         <td>
-            <button class="iconos" onclick="destacarJuego(this)" id="${_arregloJuegos[i].codigo}">
+            <button class="iconos" onclick="destacado(this)" id="${_arregloJuegos[i].codigo}">
                 <i class="publicado far fa-star"></i>
             </button>
             <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
@@ -131,66 +131,25 @@ function cargarTabla(_arregloJuegos) {
     }
 }
 
-
-//prueba destcado
-window.destacarJuego = function(codigo) {
-    // codigo.className = "far fa-edit";
-    console.log(codigo.id);
-    let estrellaColor = codigo.id+"color";
-    console.log(estrellaColor);
-    // document.getElementById(estrellaColor).classList.add("far","fa-star","green");
-    document.getElementById(`${codigo.id}`).innerHTML ="";
-//     codigo.innerHTML=`
-//     <i class="publicado far fa-star green"></i>
-//   `;
-    // document.getElementById(estrellaColor).className ="far fa-star green";
-    console.log(document.getElementById(`${codigo.id}`));
-    //se busca el objeto que se quiere editar
-        let destacar = true;
-        console.log("destacado" +destacar);
-    // se modifican los valores
-    for (let i in arregloJuegos) {
-        console.log(arregloJuegos[i].codigo);
-        console.log("codigo" + codigo.id);
-        if (arregloJuegos[i].codigo === codigo.id) {
-            
-            arregloJuegos[i].destacado = destacar;
-        console.log(arregloJuegos[i].destacado);
+window.destacado = function(estrella) {
+    console.log(estrella.id);
+    Swal.fire({
+        title: '¿Va a destacar este Juego?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085D6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si!',
+        cancelButtonText: 'No!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            estrella.innerHTML = '';
+            estrella.className = "iconos fas fa-star green";
+        } else {
+            estrella.innerHTML = '';
+            estrella.className = "iconos far fa-star publicado";
         }
-    }
-    //se guarda el arreglo actualizado en localStorage
-    localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
-    //se muestra alerta de datos modificados con exito
-    Swal.fire(
-        'Juego Destacado!',
-        'El juego se desta con exito!',
-        'success'
-    );
-    moverjuego();
-    // se vuelve a cargar la tabla con los datos modificados de LocalStorage
-    datosLocalStorage();
-}
-
-
-
-function moverjuego(){
-    console.log("moverjuego");
-    let juegoDestacado;
-    let contador = 0;
-    let juegos = JSON.parse(localStorage.getItem('ListaDeJuegos'));
-    for (let i in juegos) {
-        if(juegos[i].destacado === true){
-            //se busca juego destacado para insertarlo primero en tienda
-            juegoDestacado = juegos[i];
-            // debugger;
-            juegos.splice(contador,1);
-            console.log()
-            let array = [juegoDestacado,...juegos];
-            localStorage.setItem('ListaDeJuegos', JSON.stringify(array));
-            
-        }
-        contador ++;
-    }
+    })
 }
 
 window.eliminarJuego = function(boton) {
