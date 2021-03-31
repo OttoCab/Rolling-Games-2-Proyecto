@@ -11,16 +11,20 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/ffca2b7368.js" crossorigin="anonymous"></script>
+
     <!-- Ventana de alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
-    <!-- email JS para ventana modal de registro -->
+
+    <!-- emailJS de rollinggamesg3@gmail.com para ventana modal de REGISTRO y CONTACTO -->
+    <!--    clave: 1234grupo3 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("user_c7em18P7GVybck6CnN0jx");
+            emailjs.init("user_TgDiJmZLSdjDgcMzAAQJg");
         })();
     </script>
     <!-- ---------------------------------------- -->
+
     <title>Rolling Games | Official Site</title>
 </head>
 
@@ -28,7 +32,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="img/rg.png" alt="" width="40" height="40"></a>
+                <a class="navbar-brand" href="#">Rolling Games</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,15 +52,15 @@
                             <a class="nav-link" href="contacto.html">Contacto</a>
                         </li> -->
                     </ul>
-                    <ul class="navbar-nav ms-auto" id='navbarRightRG'>
+                    <ul class="navbar-nav" id="navbarRightRG">
                         <!-- <li class="nav-item me-3">
-                            <button class="btn btn-light" id='btnAdd' data-bs-toggle="modal"
-                                data-bs-target="#modalLogin"><strong>Login</strong></button>
+                            <button class="btn btn-secondary" id='btnLogin'><strong>Login</strong></button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-light" id='btnAdd' data-bs-toggle="modal"
-                                data-bs-target="#modalRegistro"><strong>Registro</strong></button> -->
-                        </li>
+                            abre ventana modal. Se borra data-bs-toggle="modal" data-bs-target="#modalProducto"
+                            <button class="btn btn-secondary" id="btnRegistro"><strong>Registro</strong></button>
+                            <button class="btn btn-secondary" id='btnRegistro' data-bs-toggle="modal" data-bs-target="#modalRegistro"> <strong>Registro</strong></button>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -73,26 +77,26 @@
                 </div>
             </nav>
             <h5 class="bg-dark text-light my-3">Destacado</h5>
-            <!-- inicio del carousel -->
-            <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center"
-                data-bs-ride="carousel">
+            <!-- inicio del carousel Destacado -->
+            <div id="carouselDestacado" class="carousel slide d-flex justify-content-center" data-bs-ride="carousel">
                 <div class="carousel-inner size-carousel" id='listaJuegoP'>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacado"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacado"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <!-- fin del carousel -->
+            <!-- fin del carousel Destacado -->
         </section>
         <section class="container">
             <h5 class="bg-dark text-light mt-3">Novedades</h5>
+            <!-- Inicio del carousel Novedades  -->
             <div id="carouselDeNovedades" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
@@ -131,6 +135,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-- Finde de carousel Novedades -->
         </section>
     </main>
     <!-- Modal Login -->
@@ -141,16 +146,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id='formLogin' class="container" onsubmit="loginRG(event)">
+                    <form id='formLogin' class="container" onsubmit="validarGeneralLogin(event)">
+
                         <div class="mb-3">
                             <label class='form-label'><strong>INICIA SESIÓN CON UNA CUENTA DE ROLLING
                                     GAMES</strong></label>
                             <input type="email" id="emailLogin" class="form-control"
-                                placeholder="Dirección de correo electrónico" required>
+                                placeholder="Dirección de correo electrónico" onblur="ValidEmail(this)" required>
+                            <div class=" invalid-feedback ">
+                                Debe ingresar un email válido
+                            </div>
                         </div>
                         <div class="mb-3">
                             <input type="password" id="passwordLogin" class="form-control" placeholder="Contraseña"
-                                required>
+                                onblur="validarPassword(this)" required>
+                            <div class=" invalid-feedback ">
+                                La contraseña no debe ser vacía y tener 8 caracteres
+                            </div>
                         </div>
                         <div class="mb-3 d-flex justify-content-between">
                             <div class="d-inline">
@@ -162,9 +174,9 @@
                             </a>
                         </div>
                         <div class="mb-3">
-                            <button type='submit' class="btn btn-primary w-100">
+                            <button type="submit" class="btn btn-primary w-100" id="submitLogin">
                                 INICIAR SESÍON AHORA
-                            </button>
+                            </button>                            
                         </div>
                         <div class="mb-3 text-center">
                             <a href="">Política de privacidad</a>
@@ -177,19 +189,18 @@
         </div>
     </div>
     <!-- Fin del Modal Login -->
-    <!-- ----------- Modal Registro ----------------->
-    <!-- Agrego validaciones de los campos usando validaRegistro.js y validaciones.js -->
+
+    <!-- ----------- inicio Modal Registro ----------------->
     <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-secondary text-white">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalRegistroLabel">Solicitud de Registro</h5>
-                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- importante!!!! cuando presiona boton submit valida todos los campos antes de enviar el email -->
-                    <form onsubmit="validarGeneral(event)" id="formRegistro">
+                    <form onsubmit="validarGeneralRegistro(event)" id="formRegistro">
                         <div class="mb-3">
                             <label class="form-label">País *</label>
                             <select class="form-select" id="paisReg" aria-label="Default select example"
@@ -203,7 +214,7 @@
                                 <option value="6">Uruguay</option>
                             </select>
                             <div class=" invalid-feedback ">
-                                Debe seleccionar País
+                                Debe seleccionar su País
                             </div>
                         </div>
                         <div class="mb-3">
@@ -225,7 +236,7 @@
                         <div class="mb-3">
                             <label class="form-label">Email *</label>
                             <input type="email" id="emailReg" class="form-control" placeholder="juanperez@gmail.com"
-                                onblur="validarEmail(this)" required>
+                                onblur="ValidEmail(this)" required>
                             <div class=" invalid-feedback ">
                                 Debe ingresar un email válido
                             </div>
@@ -235,7 +246,18 @@
                             <input type="password" id="passReg" class="form-control" placeholder="Contraseña"
                                 onblur="validarPassword(this)" required>
                             <div class=" invalid-feedback ">
-                                La contraseña de tener 8 caracteres
+                                La contraseña no debe ser vacía y tener 8 caracteres
+                            </div>
+                        </div>
+                        <div class="mb-3 ">
+                            <div class="form-check ">
+                                <input type="checkbox" id="terminosReg" class="form-check-input"
+                                    onchange="validarCheck(this)" checked requerid>
+                                <label class="form-check-label ">He leído y acepto los </label>
+                                <a href="#">términos del servicio</a>
+                                <div class="invalid-feedback">
+                                    Debe aceptar términos y condiciones
+                                </div>
                             </div>
                         </div>
                         <div class="mb-3 ">
@@ -243,23 +265,10 @@
                             <div class="form-check ">
                                 <input type="checkbox" id="noticiasReg" class="form-check-input">
                                 <label class="form-check-label ">Me gustaría recibir noticias, encuestas y ofertas
-                                    especiales de Epic Games</label>
+                                    especiales de Rolling Games</label>
                             </div>
                         </div>
-                        <div class="mb-3 ">
-                            <div class="form-check ">
-                                <label>
-                                    <span><input type="checkbox" id="terminosReg" class="form-check-input"
-                                            value="acepto" onblur="validarCheck(this)" requerid></span>
-                                    <span>He leído y acepto los </span>
-                                </label>
-                                <a href="#">términos del servicio</a>
-                                <div class=" invalid-feedback">
-                                    Debe aceptar términos y condiciones
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2" id="submitReg">Enviar</button>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -271,11 +280,11 @@
             <article class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <h5>Mapa del Sitio:</h5>
-                    <ul class="lista" id='footerRG'>
-                        <!-- <li><a href="index.html" class="text-secondary">Tienda</a></li>
+                    <ul class="lista" id="footerRG">
+                        <li><a href="index.html" class="text-secondary">Tienda</a></li>
                         <li><a href="administracion.html" class="text-secondary">Administracion</a></li>
                         <li><a href="adn.html" class="text-secondary">Acerca de Nosotros</a></li>
-                        <li><a href="contacto.html" class="text-secondary">Contacto</a></li> -->
+                        <li><a href="contacto.html" class="text-secondary">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 text-center">
@@ -291,10 +300,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-    <script src="js/validacion.js"></script>
-    <script src="js/detalle.js"></script>
-    <script src="js/validaRegistro.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/validacion.js"></script>
 </body>
 
 </html>
