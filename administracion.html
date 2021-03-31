@@ -40,61 +40,55 @@
             </li>
           </ul>
         </div>
-      </nav>
-    </header>
-    <main class="bg-dark">
-      <section class="container">
-        <section>
-          <h1 class="text-light text-center pt-4">Administrar Juegos</h1>
-        </section>
-        <hr />
-        <section>
-          <div >
-            <div class="d-flex justify-content-between">
-              <div>
-                <h3 class="text-light mb-4"><u>Lista de Juegos</u></h3>
-              </div>
-              <div>
-                <button
-                  class="btn btn-primary"
-                  id="btnAgregar"
-                >
-                  Agregar
-                </button>
-              </div>
+    </nav>
+  </header>
+  <main class="bg-dark">
+    <section class="container">
+      <section>
+        <h1 class="text-light text-center pt-4">Administrar Juegos</h1>
+      </section>
+      <hr />
+      <section>
+        <div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h3 class="text-light mb-4"><u>Lista de Juegos</u></h3>
+            </div>
+            <div>
+              <button class="btn btn-primary" id="btnAgregar">
+                Agregar
+              </button>
             </div>
           </div>
-          <div class="table-responsive">
-            <table class="table table-dark table-hover bordes">
-              <thead>
-                <tr>
-                  <th scope="col">Codigo</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Categoria</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">Fecha de Lanzamiento</th>
-                  <th scope="col">Clasificacion</th>
-                  <th scope="col">Desarrolladora</th>
-                  <th scope="col">Imagen</th>
-                  <th scope="col">Publicado</th>
-                  <th scope="col">Opciones</th>
-                </tr>
-              </thead>
-              <tbody id="tablaJuegos">
-               
-              </tbody>
-            </table>
-          </div>
-        </section> 
+        </div>
+        <div class="table-responsive">
+          <table class="table table-dark table-hover bordes">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Fecha de Lanzamiento</th>
+                <th scope="col">Clasificacion</th>
+                <th scope="col">Desarrolladora</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Publicado</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaJuegos">
+            </tbody>
+          </table>
+        </div>
       </section>
-    </main>
-
-          </tbody>
-        </table>
-      </div>
     </section>
   </main>
-
+  </tbody>
+  </table>
+  </div>
+  </section>
+  </main>
   <!-- Modal para agragar y modificar los Juegos -->
   <div class="modal fade" id="modalJuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -118,7 +112,6 @@
                 Debe ingresar un nombre valido
               </div>
             </div>
-
             <div class="mb3">
               <label class="form-label">Categoria</label>
               <input type="text" id="categoria" class="form-control" placeholder="Ingrese una categoria"
@@ -159,14 +152,13 @@
                 Debe ingresar mas de 5 caracteres
               </div>
               <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="text" id="imagen" class="form-control" placeholder="Agregar una Imagen" />
+              </div>
+              <div class="mb-3">
                 <label class="form-label">Publicado</label>
-                <input
-                  type="text"
-                  id="publicado"
-                  class="form-control"
-                  placeholder="si/no"
-                  onblur="CampoRequerido(this)"
-                />
+                <input type="text" id="publicado" class="form-control" placeholder="si/no"
+                  onblur="CampoRequerido(this)" />
               </div>
             </div>
             <button class="btn btn-primary mt-3" type="submit">

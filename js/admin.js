@@ -101,29 +101,30 @@ function cargarTabla(_arregloJuegos) {
     tablaJuegos.innerHTML = '';
 
     for (let i in _arregloJuegos) {
-        filaJuego = ` <tr>
-    <th scope="row">${_arregloJuegos[i].codigo}</th>
-    <td>${_arregloJuegos[i].nombre}</td>
-    <td>${_arregloJuegos[i].categoria}</td>
-    <td>${_arregloJuegos[i].descripcion}</td>
-    <td>${_arregloJuegos[i].fechaLanzamiento}</td>
-    <td>${_arregloJuegos[i].clasificacion}</td>
-    <td>${_arregloJuegos[i].desarrolladora}</td>
-    <td>${_arregloJuegos[i].imagen}</td>
-    <td>${_arregloJuegos[i].publicado}</td>
+        filaJuego = ` 
+    <tr>
+        <th scope="row">${_arregloJuegos[i].codigo}</th>
+        <td>${_arregloJuegos[i].nombre}</td>
+        <td>${_arregloJuegos[i].categoria}</td>
+        <td>${_arregloJuegos[i].descripcion}</td>
+        <td>${_arregloJuegos[i].fechaLanzamiento}</td>
+        <td>${_arregloJuegos[i].clasificacion}</td>
+        <td>${_arregloJuegos[i].desarrolladora}</td>
+        <td>${_arregloJuegos[i].imagen}</td>
+        <td>${_arregloJuegos[i].publicado}</td>
 
-    <td>
-      <button class="iconos" onclick="destacarJuego(this)" id="${_arregloJuegos[i].codigo}">
-        <i class="publicado far fa-star"></i>
-      </button>
-      <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
-        <i class="editar far fa-edit"></i>
-      </button>
-      <button class="iconos" onclick="eliminarJuego(this)" id="${_arregloJuegos[i].codigo}">
-        <i class="eliminar fas fa-trash-alt"></i>
-      </button>
-    </td>
-  </tr>`
+        <td>
+            <button class="iconos" onclick="destacarJuego(this)" id="${_arregloJuegos[i].codigo}">
+                <i class="publicado far fa-star"></i>
+            </button>
+            <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
+                <i class="editar far fa-edit"></i>
+            </button>
+            <button class="iconos" onclick="eliminarJuego(this)" id="${_arregloJuegos[i].codigo}">
+                <i class="eliminar fas fa-trash-alt"></i>
+            </button>
+        </td>
+    </tr>`
         tablaJuegos.innerHTML += filaJuego;
         //tablaJuegos.innerHTML += filaJuego;
 
@@ -145,8 +146,8 @@ window.destacarJuego = function(codigo) {
     // document.getElementById(estrellaColor).className ="far fa-star green";
     console.log(document.getElementById(`${codigo.id}`));
     //se busca el objeto que se quiere editar
-       let destacar = true;
-       console.log("destacado" +destacar);
+        let destacar = true;
+        console.log("destacado" +destacar);
     // se modifican los valores
     for (let i in arregloJuegos) {
         console.log(arregloJuegos[i].codigo);
@@ -191,9 +192,6 @@ function moverjuego(){
         contador ++;
     }
 }
-
-
-
 
 window.eliminarJuego = function(boton) {
         console.log(boton.id);
@@ -249,7 +247,6 @@ window.EJM = function(boton) {
     // muestro la ventana modal
     modalJuego.show();
 }
-
 
 //Funcion para guardar los datos modificados
 window.guardarDatos = function(event) {
