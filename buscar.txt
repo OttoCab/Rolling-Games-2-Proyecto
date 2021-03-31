@@ -1,1 +1,5 @@
-evento--> onchange (buscar)
+evento--> onchange
+
+parametros rest 
+
+operador condicional (msj con nico)
