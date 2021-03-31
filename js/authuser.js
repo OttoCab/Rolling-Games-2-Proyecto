@@ -1,7 +1,7 @@
-let stateLoginAdmin = false;
-//areYouLoged();
-loginAdmin();
+// let stateLoginAdmin = false;
 // stateLoginAdmin = JSON.parse(localStorage.getItem('LS_User'));
+areYouLoged();
+
 
 
 // creo la pestaña de admin
@@ -9,7 +9,7 @@ function loginAdmin() {
     let sectionAdminLeftNav = document.getElementById("navbarLeftRG");
     sectionAdminLeftNav.innerHTML =
         `<li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Tienda</a>
+            <a class="nav-link" aria-current="page" href="index.html">Tienda</a>
         </li>
     ${stateLoginAdmin ?
             `<li class="nav-item">
@@ -63,4 +63,5 @@ function loginOut(){
     stateLoginAdmin = false;
     loginAdmin();
     crearModales();
+    localStorage.removeItem('LS_User')
 }

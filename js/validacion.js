@@ -288,11 +288,12 @@ function loginConfirm() {
         //         this.state = state;
         //     }
         // }
-        // let UserAdmin = new User(true);
-        // localStorage.setItem('LS_User', JSON.stringify(UserAdmin.state));
+        let UserAdmin = {}
+        localStorage.setItem('LS_User', JSON.stringify(UserAdmin));
         stateLoginAdmin = true;
+        // JSON.parse(localStorage.getItem('LS_User'));
         loginAdmin();
-        //window.location = "../administracion.html";
+        window.location = "../administracion.html";
         modalLogin.hide();
     }
 
