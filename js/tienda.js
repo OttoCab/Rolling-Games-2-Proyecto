@@ -5,6 +5,7 @@ function leerInformacion() {
     if (localStorage.length > 0) {
         //se trae los datos del localStorage y se los pasa a js
         juegosTienda = JSON.parse(localStorage.getItem('ListaDeJuegos'));
+        
         //crea la card con la los datos de juego
         let lista = document.getElementById('listaJuegoP');
         //limpar los datos del contenedor 

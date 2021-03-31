@@ -2,20 +2,22 @@ import { Juegos } from "./ClasesAdmin.js";
 
 let arregloJuegos = [];
 const modalJuego = new bootstrap.Modal(document.getElementById('modalJuego'));
-let btnAgregar = document.getElementById('btnAgregar');
+
+let modificarJuego = false;
 
 //cuando modificarJuego se false quiero AGREGAR un nuevo juego
 //cuando modificarJuego se true quiero modificar un juego existente
 //esta en false porqeu se asume que se quiere agregar antes de modificar
-let modificarJuego = false;
 
-// let publicacion = false;
+
+// let destacado = false;
 
 //funcion para mostrar modal
+let btnAgregar = document.getElementById('btnAgregar');
 btnAgregar.addEventListener('click', function() {
     limpiarForm();
     modalJuego.show();
-})
+});
 
 datosLocalStorage();
 // let boton = document.getElementById('btnAgregar');
@@ -31,15 +33,9 @@ function agregarJuego() {
     let clasificacion = document.getElementById("clasificacion").value;
     let desarrolladora = document.getElementById("desarrolladora").value;
     let imagen = document.getElementById("imagen").value;
-    // let publicado = document.getElementById("publicado");
-    let publicado = document.getElementById('publicado');
-    publicado.addEventListener('change', validarTerminos);
-    function validarTerminos(){
-    console.log("desde check");
-    //explicito = if(true === true) ; implicito if (true)
-    }
-
-    
+    let publicado = document.getElementById("publicado").value;
+    let destacado = false;
+       
     let nuevoJuego = new Juegos( 
         codigo,
         nombre,
@@ -49,7 +45,8 @@ function agregarJuego() {
         clasificacion,
         desarrolladora,
         imagen,
-        publicado
+        publicado,
+        destacado
     );
     //se agrega en el arreglo
     arregloJuegos.push(nuevoJuego);
@@ -78,7 +75,8 @@ function limpiarForm() {
     fechaLanzamiento.className = 'form-control';
     clasificacion.className = 'form-control';
     desarrolladora.className = 'form-control';
-    modificarJuego = false;
+    // destacado.className = 'form-control';
+    // modificarJuego = 'form-control';
 }
 
 //funcion leer los datos de local y que no se borren
@@ -112,18 +110,11 @@ function cargarTabla(_arregloJuegos) {
     <td>${_arregloJuegos[i].clasificacion}</td>
     <td>${_arregloJuegos[i].desarrolladora}</td>
     <td>${_arregloJuegos[i].imagen}</td>
+    <td>${_arregloJuegos[i].publicado}</td>
+
     <td>
-      <div class="form-check">
-        <input
-          type="checkbox"
-          id="publicado"
-          class="form-check-input"
-        />
-      </div>
-    </td>
-    <td>
-      <button class="iconos" onclick="destacado(this)" id="${_arregloJuegos[i].codigo}">
-        <i class="publicado far fa-star" ></i>
+      <button class="iconos" onclick="destacarJuego(this)" id="${_arregloJuegos[i].codigo}">
+        <i class="publicado far fa-star"></i>
       </button>
       <button class="iconos" onclick="EJM(this)" id="${_arregloJuegos[i].codigo}">
         <i class="editar far fa-edit"></i>
@@ -140,27 +131,68 @@ function cargarTabla(_arregloJuegos) {
 }
 
 
-
-window.destacado = function(estrella) {
-    console.log(estrella.id);
-    Swal.fire({
-        title: '¿Va a destacar este Juego?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si!',
-        cancelButtonText: 'No!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            estrella.innerHTML = '';
-            estrella.className = "iconos fas fa-star green";
-        }else{
-            estrella.innerHTML = '';
-            estrella.className = "iconos far fa-star publicado";
+//prueba destcado
+window.destacarJuego = function(codigo) {
+    // codigo.className = "far fa-edit";
+    console.log(codigo.id);
+    let estrellaColor = codigo.id+"color";
+    console.log(estrellaColor);
+    // document.getElementById(estrellaColor).classList.add("far","fa-star","green");
+    document.getElementById(`${codigo.id}`).innerHTML ="";
+//     codigo.innerHTML=`
+//     <i class="publicado far fa-star green"></i>
+//   `;
+    // document.getElementById(estrellaColor).className ="far fa-star green";
+    console.log(document.getElementById(`${codigo.id}`));
+    //se busca el objeto que se quiere editar
+       let destacar = true;
+       console.log("destacado" +destacar);
+    // se modifican los valores
+    for (let i in arregloJuegos) {
+        console.log(arregloJuegos[i].codigo);
+        console.log("codigo" + codigo.id);
+        if (arregloJuegos[i].codigo === codigo.id) {
+            
+            arregloJuegos[i].destacado = destacar;
+        console.log(arregloJuegos[i].destacado);
         }
-    })
+    }
+    //se guarda el arreglo actualizado en localStorage
+    localStorage.setItem('ListaDeJuegos', JSON.stringify(arregloJuegos));
+    //se muestra alerta de datos modificados con exito
+    Swal.fire(
+        'Juego Destacado!',
+        'El juego se desta con exito!',
+        'success'
+    );
+    moverjuego();
+    // se vuelve a cargar la tabla con los datos modificados de LocalStorage
+    datosLocalStorage();
 }
+
+
+
+function moverjuego(){
+    console.log("moverjuego");
+    let juegoDestacado;
+    let contador = 0;
+    let juegos = JSON.parse(localStorage.getItem('ListaDeJuegos'));
+    for (let i in juegos) {
+        if(juegos[i].destacado === true){
+            //se busca juego destacado para insertarlo primero en tienda
+            juegoDestacado = juegos[i];
+            // debugger;
+            juegos.splice(contador,1);
+            console.log()
+            let array = [juegoDestacado,...juegos];
+            localStorage.setItem('ListaDeJuegos', JSON.stringify(array));
+            
+        }
+        contador ++;
+    }
+}
+
+
 
 
 window.eliminarJuego = function(boton) {
@@ -211,6 +243,7 @@ window.EJM = function(boton) {
     document.getElementById('clasificacion').value = JuegoeEncontrado.clasificacion;
     document.getElementById('desarrolladora').value = JuegoeEncontrado.desarrolladora;
     document.getElementById('imagen').value = JuegoeEncontrado.imagen;
+    document.getElementById('publicado').value = JuegoeEncontrado.publicado;
     //modificar juego
     modificarJuego = true;
     // muestro la ventana modal
