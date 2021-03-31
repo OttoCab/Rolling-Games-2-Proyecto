@@ -4,7 +4,7 @@ _Este proyecto es una página web con un catálogo de juegos al estilo Epic Game
 
 ## Demo del Proyecto:
 
-_Mirá una demo del NETLIFY:_ [Proyecto Rolling Games](https://trello.com/b/aG1xYAVA/comision-1a-2do-sem)
+_Mirá una demo del :_ [Proyecto Rolling Games](https://rollinggamesg3.netlify.app/)
 
 ## Pasos a seguir para usar el proyecto:
 
